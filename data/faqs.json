@@ -1,0 +1,842 @@
+[
+  {
+    "id": 1,
+    "category": "Checking Account",
+    "question": "How do I open a checking account?",
+    "answer": "You can open a SecureBank checking account online, through the SecureBank Mobile app, or by visiting a branch. You must provide valid identification, contact information, and any information required for identity verification."
+  },
+  {
+    "id": 2,
+    "category": "Checking Account",
+    "question": "What documents are required to open an account?",
+    "answer": "You need a valid government-issued photo ID, proof of address, a valid phone number, and an email address."
+  },
+  {
+    "id": 3,
+    "category": "Checking Account",
+    "question": "Is there a minimum opening deposit?",
+    "answer": "The minimum opening deposit for a standard checking account is $25."
+  },
+  {
+    "id": 4,
+    "category": "Checking Account",
+    "question": "Is there a monthly maintenance fee?",
+    "answer": "The standard checking account has a $10 monthly maintenance fee. The fee is waived if you maintain an average monthly balance of at least $1,000 or receive at least one qualifying direct deposit of $500 or more during the statement cycle."
+  },
+  {
+    "id": 5,
+    "category": "Checking Account",
+    "question": "Can I have more than one checking account?",
+    "answer": "Yes. Customers may open multiple checking accounts, subject to SecureBank account approval."
+  },
+  {
+    "id": 6,
+    "category": "Checking Account",
+    "question": "How do I close my checking account?",
+    "answer": "You may request account closure through customer support or at a branch after all pending transactions have cleared and the balance is zero."
+  },
+  {
+    "id": 7,
+    "category": "Checking Account",
+    "question": "Can I add another person to my checking account?",
+    "answer": "Yes. You may request to add a joint account holder. Both account holders may be required to complete identity verification."
+  },
+  {
+    "id": 8,
+    "category": "Checking Account",
+    "question": "When will my account statement be available?",
+    "answer": "Monthly statements are normally available in online banking within five business days after the statement cycle ends."
+  },
+  {
+    "id": 9,
+    "category": "Savings Account",
+    "question": "How do I open a savings account?",
+    "answer": "You can open a savings account online, in the SecureBank Mobile app, or at a SecureBank branch."
+  },
+  {
+    "id": 10,
+    "category": "Savings Account",
+    "question": "What is the minimum opening deposit for a savings account?",
+    "answer": "The minimum opening deposit is $25."
+  },
+  {
+    "id": 11,
+    "category": "Savings Account",
+    "question": "Does the savings account earn interest?",
+    "answer": "Yes. Eligible savings balances earn interest. The applicable rate may vary and is displayed in online banking."
+  },
+  {
+    "id": 12,
+    "category": "Savings Account",
+    "question": "Is there a monthly savings account fee?",
+    "answer": "The standard savings account fee is $5 per month. It is waived when the daily balance remains at or above $300."
+  },
+  {
+    "id": 13,
+    "category": "Savings Account",
+    "question": "Can I transfer money between checking and savings?",
+    "answer": "Yes. Transfers between your own SecureBank accounts can be made through online banking or the mobile app."
+  },
+  {
+    "id": 14,
+    "category": "Savings Account",
+    "question": "How quickly do transfers between my SecureBank accounts happen?",
+    "answer": "Transfers between eligible SecureBank accounts are generally processed immediately."
+  },
+  {
+    "id": 15,
+    "category": "Debit Cards",
+    "question": "When will I receive my debit card?",
+    "answer": "New debit cards normally arrive within 7 to 10 business days after the account is approved."
+  },
+  {
+    "id": 16,
+    "category": "Debit Cards",
+    "question": "How do I activate my debit card?",
+    "answer": "You can activate your debit card in the SecureBank Mobile app, through online banking, or by calling the activation number printed on the card sticker."
+  },
+  {
+    "id": 17,
+    "category": "Debit Cards",
+    "question": "How do I change my debit card PIN?",
+    "answer": "You can change your debit card PIN at a SecureBank ATM or through the card management section of the mobile app when available."
+  },
+  {
+    "id": 18,
+    "category": "Debit Cards",
+    "question": "What should I do if my debit card is lost or stolen?",
+    "answer": "Lock the card immediately in the SecureBank Mobile app and call the 24/7 lost or stolen card hotline at 1-800-555-0199."
+  },
+  {
+    "id": 19,
+    "category": "Debit Cards",
+    "question": "Can I temporarily lock my debit card?",
+    "answer": "Yes. You can temporarily lock and unlock an eligible debit card using the SecureBank Mobile app."
+  },
+  {
+    "id": 20,
+    "category": "Debit Cards",
+    "question": "Why was my debit card declined?",
+    "answer": "A card may be declined because of insufficient funds, an incorrect PIN, a card lock, an expired card, a security restriction, or a transaction exceeding your card limit."
+  },
+  {
+    "id": 21,
+    "category": "Debit Cards",
+    "question": "What is the daily debit card purchase limit?",
+    "answer": "The standard daily debit card purchase limit is $3,000."
+  },
+  {
+    "id": 22,
+    "category": "Debit Cards",
+    "question": "What is the daily ATM withdrawal limit?",
+    "answer": "The standard ATM withdrawal limit is $500 per day."
+  },
+  {
+    "id": 23,
+    "category": "Debit Cards",
+    "question": "Can I use my debit card internationally?",
+    "answer": "Yes, where the card network is accepted. International transactions may be subject to additional fees and fraud monitoring."
+  },
+  {
+    "id": 24,
+    "category": "Debit Cards",
+    "question": "Is there a foreign transaction fee on debit card purchases?",
+    "answer": "SecureBank charges a 3% foreign transaction fee on eligible debit card purchases made in a foreign currency or processed outside the United States."
+  },
+  {
+    "id": 25,
+    "category": "Debit Cards",
+    "question": "How do I dispute a debit card transaction?",
+    "answer": "If you do not recognize a transaction, first lock your card. Then contact SecureBank customer support as soon as possible to start a dispute."
+  },
+  {
+    "id": 26,
+    "category": "Credit Cards",
+    "question": "How do I apply for a SecureBank credit card?",
+    "answer": "You can submit a credit card application online, through the mobile app, or at a branch."
+  },
+  {
+    "id": 27,
+    "category": "Credit Cards",
+    "question": "Does applying for a credit card guarantee approval?",
+    "answer": "No. Credit card applications are subject to eligibility, identity verification, credit review, and approval."
+  },
+  {
+    "id": 28,
+    "category": "Credit Cards",
+    "question": "How can I check my credit card balance?",
+    "answer": "You can view your current balance in online banking or the SecureBank Mobile app."
+  },
+  {
+    "id": 29,
+    "category": "Credit Cards",
+    "question": "How can I make a credit card payment?",
+    "answer": "Payments can be made through online banking, the mobile app, automatic payments, or from an eligible linked bank account."
+  },
+  {
+    "id": 30,
+    "category": "Credit Cards",
+    "question": "What happens if I miss my credit card payment?",
+    "answer": "A missed payment may result in a late fee, interest charges, and possible credit reporting consequences."
+  },
+  {
+    "id": 31,
+    "category": "Credit Cards",
+    "question": "What is the late payment fee?",
+    "answer": "The standard late payment fee is up to $30."
+  },
+  {
+    "id": 32,
+    "category": "Credit Cards",
+    "question": "Can I set up automatic credit card payments?",
+    "answer": "Yes. You can set up AutoPay for the minimum payment, statement balance, or another supported amount."
+  },
+  {
+    "id": 33,
+    "category": "Credit Cards",
+    "question": "How do I report a lost or stolen credit card?",
+    "answer": "Lock the card in the mobile app if possible and call the 24/7 lost or stolen card hotline at 1-800-555-0199."
+  },
+  {
+    "id": 34,
+    "category": "Credit Cards",
+    "question": "Can I request a replacement credit card?",
+    "answer": "Yes. You can request a replacement card through customer support or through card management options in online banking when available."
+  },
+  {
+    "id": 35,
+    "category": "Online Banking",
+    "question": "How do I register for online banking?",
+    "answer": "Go to the SecureBank website and choose \"Enroll in Online Banking.\" You will need account information and identity verification details."
+  },
+  {
+    "id": 36,
+    "category": "Online Banking",
+    "question": "I forgot my online banking password. What should I do?",
+    "answer": "Select \"Forgot Password\" on the login page. Follow the instructions to verify your identity and create a new password."
+  },
+  {
+    "id": 37,
+    "category": "Online Banking",
+    "question": "I forgot my username. How can I recover it?",
+    "answer": "Select \"Forgot Username\" on the login page and follow the identity verification steps."
+  },
+  {
+    "id": 38,
+    "category": "Online Banking",
+    "question": "Why is my online banking account locked?",
+    "answer": "Your account may be locked after multiple unsuccessful login attempts or because of a security review."
+  },
+  {
+    "id": 39,
+    "category": "Online Banking",
+    "question": "How do I unlock my online banking account?",
+    "answer": "Use the account recovery option on the login page or contact customer support."
+  },
+  {
+    "id": 40,
+    "category": "Online Banking",
+    "question": "Can I change my email address online?",
+    "answer": "Yes. Sign in to online banking, open your profile settings, and update your email address. Additional verification may be required."
+  },
+  {
+    "id": 41,
+    "category": "Online Banking",
+    "question": "Can I change my phone number online?",
+    "answer": "Yes. Update your phone number in profile settings. For security reasons, some changes may require additional verification."
+  },
+  {
+    "id": 42,
+    "category": "Online Banking",
+    "question": "Can I download bank statements?",
+    "answer": "Yes. Sign in to online banking, select the account, open Statements, choose a statement period, and download the statement."
+  },
+  {
+    "id": 43,
+    "category": "Mobile Banking",
+    "question": "Where can I download the SecureBank Mobile app?",
+    "answer": "The SecureBank Mobile app is available for Android and iOS through their official app stores."
+  },
+  {
+    "id": 44,
+    "category": "Mobile Banking",
+    "question": "Is the mobile banking app free?",
+    "answer": "SecureBank does not charge a fee to download or use the app. Your mobile carrier may charge for data usage."
+  },
+  {
+    "id": 45,
+    "category": "Mobile Banking",
+    "question": "Can I deposit checks using the mobile app?",
+    "answer": "Yes. Eligible customers can use Mobile Check Deposit by taking photos of the front and back of an endorsed check."
+  },
+  {
+    "id": 46,
+    "category": "Mobile Banking",
+    "question": "How long does a mobile check deposit take?",
+    "answer": "Many deposits are available within one to two business days, although holds may apply."
+  },
+  {
+    "id": 47,
+    "category": "Mobile Banking",
+    "question": "Why is mobile check deposit unavailable?",
+    "answer": "The feature may be unavailable because of account restrictions, an unsupported account, technical issues, or an ineligible check."
+  },
+  {
+    "id": 48,
+    "category": "Mobile Banking",
+    "question": "Does the mobile app support biometric login?",
+    "answer": "Yes. Supported devices may use fingerprint or facial recognition for login after the feature is enabled."
+  },
+  {
+    "id": 49,
+    "category": "Money Transfers",
+    "question": "How do I transfer money to another SecureBank account?",
+    "answer": "Sign in to online banking or the mobile app, select Transfers, choose the sending and receiving accounts, enter the amount, and confirm."
+  },
+  {
+    "id": 50,
+    "category": "Money Transfers",
+    "question": "Can I transfer money to another bank?",
+    "answer": "Yes. You can link an eligible external bank account and transfer funds using ACH."
+  },
+  {
+    "id": 51,
+    "category": "Money Transfers",
+    "question": "How long does an external bank transfer take?",
+    "answer": "Standard external ACH transfers usually take one to three business days."
+  },
+  {
+    "id": 52,
+    "category": "Money Transfers",
+    "question": "Is there a fee for external ACH transfers?",
+    "answer": "Standard outgoing ACH transfers initiated through online banking are free unless otherwise stated."
+  },
+  {
+    "id": 53,
+    "category": "Money Transfers",
+    "question": "Can I cancel a transfer?",
+    "answer": "A scheduled transfer may be canceled before processing begins. Completed or processing transfers may not be cancelable."
+  },
+  {
+    "id": 54,
+    "category": "Money Transfers",
+    "question": "Why is my transfer pending?",
+    "answer": "Transfers may remain pending because of processing times, weekends, holidays, security reviews, or bank verification requirements."
+  },
+  {
+    "id": 55,
+    "category": "Money Transfers",
+    "question": "Can I schedule recurring transfers?",
+    "answer": "Yes. Eligible transfers can be scheduled as recurring transfers through online banking."
+  },
+  {
+    "id": 56,
+    "category": "Wire Transfers",
+    "question": "Does SecureBank offer wire transfers?",
+    "answer": "Yes. SecureBank supports eligible domestic and international wire transfers."
+  },
+  {
+    "id": 57,
+    "category": "Wire Transfers",
+    "question": "What information is needed for a domestic wire transfer?",
+    "answer": "You typically need the recipient's full name, bank name, routing number, account number, amount, and payment purpose."
+  },
+  {
+    "id": 58,
+    "category": "Wire Transfers",
+    "question": "What is the outgoing domestic wire fee?",
+    "answer": "The standard outgoing domestic wire transfer fee is $25."
+  },
+  {
+    "id": 59,
+    "category": "Wire Transfers",
+    "question": "What is the incoming wire fee?",
+    "answer": "The standard incoming wire transfer fee is $10."
+  },
+  {
+    "id": 60,
+    "category": "Wire Transfers",
+    "question": "How long does a domestic wire transfer take?",
+    "answer": "Domestic wires submitted before the daily cutoff are normally processed the same business day."
+  },
+  {
+    "id": 61,
+    "category": "Wire Transfers",
+    "question": "Can a wire transfer be reversed?",
+    "answer": "Wire transfers are generally difficult to reverse after they are sent. Contact customer support immediately if you believe a wire was sent incorrectly or fraudulently."
+  },
+  {
+    "id": 62,
+    "category": "Atm Services",
+    "question": "How do I find a SecureBank ATM?",
+    "answer": "Use the ATM and branch locator available on the SecureBank website or mobile app."
+  },
+  {
+    "id": 63,
+    "category": "Atm Services",
+    "question": "Is there a fee for using a SecureBank ATM?",
+    "answer": "SecureBank does not charge a withdrawal fee at SecureBank-owned ATMs."
+  },
+  {
+    "id": 64,
+    "category": "Atm Services",
+    "question": "What happens if I use another bank's ATM?",
+    "answer": "SecureBank may charge a $2.50 non-SecureBank ATM fee, and the ATM owner may charge an additional fee."
+  },
+  {
+    "id": 65,
+    "category": "Atm Services",
+    "question": "The ATM did not give me cash but my account was charged. What should I do?",
+    "answer": "Contact SecureBank customer support and provide the ATM location, date, time, and transaction amount so the transaction can be investigated."
+  },
+  {
+    "id": 66,
+    "category": "Atm Services",
+    "question": "Can I deposit cash at an ATM?",
+    "answer": "Cash deposits are accepted at selected SecureBank deposit-enabled ATMs."
+  },
+  {
+    "id": 67,
+    "category": "Direct Deposit",
+    "question": "How do I set up direct deposit?",
+    "answer": "Give your employer or payer your SecureBank routing number and account number. You may also download a direct deposit form from online banking."
+  },
+  {
+    "id": 68,
+    "category": "Direct Deposit",
+    "question": "Where can I find my account number?",
+    "answer": "Your account number is available in online banking, on eligible account statements, or from customer support after identity verification."
+  },
+  {
+    "id": 69,
+    "category": "Direct Deposit",
+    "question": "Where can I find the routing number?",
+    "answer": "SecureBank's fictional routing number for this project is 021000999."
+  },
+  {
+    "id": 70,
+    "category": "Direct Deposit",
+    "question": "When will my direct deposit arrive?",
+    "answer": "Direct deposits are normally posted when SecureBank receives the payment instructions from the payer."
+  },
+  {
+    "id": 71,
+    "category": "Direct Deposit",
+    "question": "Why is my direct deposit late?",
+    "answer": "Delays may be caused by the payer's payroll schedule, incorrect banking information, holidays, or processing issues."
+  },
+  {
+    "id": 72,
+    "category": "Checks",
+    "question": "How do I order checks?",
+    "answer": "Eligible customers can order checks through online banking or by contacting customer support."
+  },
+  {
+    "id": 73,
+    "category": "Checks",
+    "question": "Can I stop payment on a check?",
+    "answer": "Yes. You may request a stop payment before the check is paid."
+  },
+  {
+    "id": 74,
+    "category": "Checks",
+    "question": "Is there a stop payment fee?",
+    "answer": "The standard stop payment fee is $30."
+  },
+  {
+    "id": 75,
+    "category": "Checks",
+    "question": "What should I do if a check is lost?",
+    "answer": "Contact customer support. If the check was written from your account, you may request a stop payment."
+  },
+  {
+    "id": 76,
+    "category": "Checks",
+    "question": "Why was my deposited check placed on hold?",
+    "answer": "A hold may be placed because of the check amount, account history, verification needs, suspected fraud, or other risk factors."
+  },
+  {
+    "id": 77,
+    "category": "Bill Pay",
+    "question": "What is Online Bill Pay?",
+    "answer": "Online Bill Pay allows eligible customers to schedule payments to companies or individuals through online banking."
+  },
+  {
+    "id": 78,
+    "category": "Bill Pay",
+    "question": "Is Bill Pay free?",
+    "answer": "Standard online Bill Pay is free for eligible SecureBank accounts."
+  },
+  {
+    "id": 79,
+    "category": "Bill Pay",
+    "question": "How long does a bill payment take?",
+    "answer": "Electronic payments commonly take one to three business days. Payments sent by paper check may take longer."
+  },
+  {
+    "id": 80,
+    "category": "Bill Pay",
+    "question": "Can I schedule recurring bill payments?",
+    "answer": "Yes. You can schedule recurring payments to eligible billers."
+  },
+  {
+    "id": 81,
+    "category": "Bill Pay",
+    "question": "Can I cancel a bill payment?",
+    "answer": "A scheduled payment may be canceled before processing starts. Once processing begins, cancellation may not be possible."
+  },
+  {
+    "id": 82,
+    "category": "Overdrafts And Insufficient Funds",
+    "question": "What happens if I spend more money than I have?",
+    "answer": "A transaction may be declined or may result in an overdraft depending on your account settings and transaction type."
+  },
+  {
+    "id": 83,
+    "category": "Overdrafts And Insufficient Funds",
+    "question": "What is the overdraft fee?",
+    "answer": "The standard overdraft fee is $25 per paid overdraft item."
+  },
+  {
+    "id": 84,
+    "category": "Overdrafts And Insufficient Funds",
+    "question": "Does SecureBank offer overdraft protection?",
+    "answer": "Eligible customers may link another SecureBank account to help cover certain transactions when the checking account has insufficient funds."
+  },
+  {
+    "id": 85,
+    "category": "Overdrafts And Insufficient Funds",
+    "question": "How can I avoid overdraft fees?",
+    "answer": "Monitor your balance, set account alerts, keep sufficient funds available, and consider eligible overdraft protection options."
+  },
+  {
+    "id": 86,
+    "category": "Fees",
+    "question": "Where can I view all account fees?",
+    "answer": "Account fees are listed in the applicable account disclosures and fee schedule available through online banking or customer support."
+  },
+  {
+    "id": 87,
+    "category": "Security And Fraud",
+    "question": "I see a transaction I do not recognize. What should I do?",
+    "answer": "Lock the affected card immediately if possible and contact SecureBank customer support. Do not share your password, PIN, or verification codes."
+  },
+  {
+    "id": 88,
+    "category": "Security And Fraud",
+    "question": "Someone asked me for my one-time verification code. Should I give it to them?",
+    "answer": "No. Never share a one-time verification code with another person. SecureBank will not ask you to provide a one-time code to an unsolicited caller or message sender."
+  },
+  {
+    "id": 89,
+    "category": "Security And Fraud",
+    "question": "I received a suspicious email claiming to be SecureBank. What should I do?",
+    "answer": "Do not click links or download attachments. Contact SecureBank using the official contact information in this knowledge base."
+  },
+  {
+    "id": 90,
+    "category": "Security And Fraud",
+    "question": "Will SecureBank ask for my password by email or phone?",
+    "answer": "No. SecureBank will never ask you to reveal your complete online banking password."
+  },
+  {
+    "id": 91,
+    "category": "Security And Fraud",
+    "question": "How do I protect my account?",
+    "answer": "Use a strong unique password, enable available multi-factor authentication, keep contact information current, monitor transactions, and never share passwords, PINs, or verification codes."
+  },
+  {
+    "id": 92,
+    "category": "Security And Fraud",
+    "question": "What should I do if my phone is lost?",
+    "answer": "Contact your mobile carrier and SecureBank if you believe your banking information could be at risk. Change your online banking password and review recent transactions."
+  },
+  {
+    "id": 93,
+    "category": "Security And Fraud",
+    "question": "Can I lock my card from the mobile app?",
+    "answer": "Yes. Eligible debit and credit cards can be temporarily locked through card management."
+  },
+  {
+    "id": 94,
+    "category": "Security And Fraud",
+    "question": "What should I do if I believe my identity has been stolen?",
+    "answer": "Contact SecureBank customer support immediately, review your accounts, change online banking credentials, and take appropriate identity-protection steps."
+  },
+  {
+    "id": 95,
+    "category": "Passwords And Login Security",
+    "question": "What makes a strong password?",
+    "answer": "Use a long, unique password containing a mix of characters and avoid using the same password on other websites."
+  },
+  {
+    "id": 96,
+    "category": "Passwords And Login Security",
+    "question": "Can customer support tell me my current password?",
+    "answer": "No. Customer support cannot view or provide your current password."
+  },
+  {
+    "id": 97,
+    "category": "Passwords And Login Security",
+    "question": "Why am I being asked for a verification code?",
+    "answer": "SecureBank may request an additional verification code when you log in from a new device or perform a sensitive action."
+  },
+  {
+    "id": 98,
+    "category": "Passwords And Login Security",
+    "question": "I am not receiving my verification code. What should I do?",
+    "answer": "Confirm that your phone number or email address is correct, check spam folders, wait a few minutes, and request another code. Contact support if the issue continues."
+  },
+  {
+    "id": 99,
+    "category": "Personal Information",
+    "question": "How do I change my address?",
+    "answer": "Update your address through online banking or contact customer support. Additional identity verification may be required."
+  },
+  {
+    "id": 100,
+    "category": "Personal Information",
+    "question": "How do I change my legal name?",
+    "answer": "Contact customer support or visit a branch. Documentation supporting the legal name change may be required."
+  },
+  {
+    "id": 101,
+    "category": "Personal Information",
+    "question": "How do I update my email or phone number?",
+    "answer": "Sign in to online banking and update your contact details in profile settings, or contact customer support."
+  },
+  {
+    "id": 102,
+    "category": "Personal Loans",
+    "question": "Does SecureBank offer personal loans?",
+    "answer": "Yes. SecureBank offers fictional unsecured personal loans to eligible applicants."
+  },
+  {
+    "id": 103,
+    "category": "Personal Loans",
+    "question": "How do I apply for a personal loan?",
+    "answer": "Applications may be submitted online or through a branch."
+  },
+  {
+    "id": 104,
+    "category": "Personal Loans",
+    "question": "What information is required for a personal loan application?",
+    "answer": "Applicants may need to provide identification, income information, employment details, housing information, and consent to a credit review."
+  },
+  {
+    "id": 105,
+    "category": "Personal Loans",
+    "question": "Is approval guaranteed?",
+    "answer": "No. Loan approval depends on eligibility, credit review, income, and other underwriting criteria."
+  },
+  {
+    "id": 106,
+    "category": "Personal Loans",
+    "question": "Can I pay off my personal loan early?",
+    "answer": "Yes. SecureBank personal loans in this fictional project do not have an early payoff penalty."
+  },
+  {
+    "id": 107,
+    "category": "Personal Loans",
+    "question": "How can I view my loan balance?",
+    "answer": "Eligible loan balances are displayed in online banking."
+  },
+  {
+    "id": 108,
+    "category": "Account Alerts",
+    "question": "Can I receive transaction alerts?",
+    "answer": "Yes. Customers can enable eligible email, push, or text alerts through online banking or the mobile app."
+  },
+  {
+    "id": 109,
+    "category": "Account Alerts",
+    "question": "What alerts are available?",
+    "answer": "Available alerts may include low balance, large purchase, debit card transaction, deposit received, payment due, and suspicious activity alerts."
+  },
+  {
+    "id": 110,
+    "category": "Account Alerts",
+    "question": "How do I change my alert preferences?",
+    "answer": "Open Settings or Alerts in online banking or the mobile app and update your preferences."
+  },
+  {
+    "id": 111,
+    "category": "Branch Services",
+    "question": "What can I do at a SecureBank branch?",
+    "answer": "Branch services may include account opening, deposits, withdrawals, cashier's checks, account maintenance, identity verification, and general customer support."
+  },
+  {
+    "id": 112,
+    "category": "Branch Services",
+    "question": "Do I need an appointment?",
+    "answer": "Most routine branch services do not require an appointment, although appointments may reduce waiting time."
+  },
+  {
+    "id": 113,
+    "category": "Branch Services",
+    "question": "What ID should I bring to a branch?",
+    "answer": "Bring a valid government-issued photo ID."
+  },
+  {
+    "id": 114,
+    "category": "Cashier'S Checks",
+    "question": "Can I get a cashier's check?",
+    "answer": "Yes. Eligible customers may purchase cashier's checks at a SecureBank branch."
+  },
+  {
+    "id": 115,
+    "category": "Cashier'S Checks",
+    "question": "Is there a cashier's check fee?",
+    "answer": "The standard cashier's check fee is $10."
+  },
+  {
+    "id": 116,
+    "category": "Cashier'S Checks",
+    "question": "What information do I need?",
+    "answer": "You generally need the payee name, check amount, and valid identification."
+  },
+  {
+    "id": 117,
+    "category": "Account Holds And Restrictions",
+    "question": "Why is my account restricted?",
+    "answer": "An account may be restricted because of identity verification, suspected fraud, legal requirements, unusual activity, or unresolved account issues."
+  },
+  {
+    "id": 118,
+    "category": "Account Holds And Restrictions",
+    "question": "Can the chatbot remove an account restriction?",
+    "answer": "No. Account restrictions must be reviewed by SecureBank customer support."
+  },
+  {
+    "id": 119,
+    "category": "Account Holds And Restrictions",
+    "question": "How long does a restriction review take?",
+    "answer": "Review times vary depending on the reason for the restriction and the information required."
+  },
+  {
+    "id": 120,
+    "category": "Pending Transactions",
+    "question": "What is a pending transaction?",
+    "answer": "A pending transaction has been authorized but has not yet fully posted to your account."
+  },
+  {
+    "id": 121,
+    "category": "Pending Transactions",
+    "question": "How long do pending card transactions take to post?",
+    "answer": "Most card transactions post within one to three business days, although some merchants may take longer."
+  },
+  {
+    "id": 122,
+    "category": "Pending Transactions",
+    "question": "Why did my pending transaction disappear?",
+    "answer": "A merchant may have canceled or changed the authorization. A final transaction may appear later."
+  },
+  {
+    "id": 123,
+    "category": "Pending Transactions",
+    "question": "Can SecureBank cancel a pending card transaction?",
+    "answer": "SecureBank generally cannot cancel a merchant authorization. Contact the merchant if you want to cancel a purchase."
+  },
+  {
+    "id": 124,
+    "category": "Refunds",
+    "question": "How long does a card refund take?",
+    "answer": "After the merchant processes a refund, it may take three to ten business days to appear in your account."
+  },
+  {
+    "id": 125,
+    "category": "Refunds",
+    "question": "Can SecureBank speed up a merchant refund?",
+    "answer": "No. Refund timing depends on the merchant and payment network processing."
+  },
+  {
+    "id": 126,
+    "category": "Refunds",
+    "question": "My merchant says they refunded me but I cannot see it. What should I do?",
+    "answer": "Allow the normal processing period. If the refund still does not appear, contact the merchant and SecureBank customer support."
+  },
+  {
+    "id": 127,
+    "category": "Payment Card Disputes",
+    "question": "How do I dispute a card purchase?",
+    "answer": "Contact the merchant first when appropriate. If the issue remains unresolved or the transaction is unauthorized, contact SecureBank customer support to request a dispute."
+  },
+  {
+    "id": 128,
+    "category": "Payment Card Disputes",
+    "question": "What information should I provide for a dispute?",
+    "answer": "Provide the transaction date, amount, merchant name, reason for the dispute, and any relevant supporting information."
+  },
+  {
+    "id": 129,
+    "category": "Payment Card Disputes",
+    "question": "How long does a dispute take?",
+    "answer": "Investigation time varies depending on the transaction and information available."
+  },
+  {
+    "id": 130,
+    "category": "Account Balance And Available Balance",
+    "question": "What is the difference between current balance and available balance?",
+    "answer": "Current balance reflects posted transactions. Available balance generally reflects funds currently available to spend after considering certain holds and pending transactions."
+  },
+  {
+    "id": 131,
+    "category": "Account Balance And Available Balance",
+    "question": "Why is my available balance lower than my current balance?",
+    "answer": "Pending card authorizations, deposit holds, or other account holds may reduce your available balance."
+  },
+  {
+    "id": 132,
+    "category": "Business Days",
+    "question": "What is considered a business day?",
+    "answer": "For this project, business days are Monday through Friday, excluding recognized bank holidays."
+  },
+  {
+    "id": 133,
+    "category": "Business Days",
+    "question": "Are weekends counted in processing times?",
+    "answer": "Usually no. Many transfers and deposits are processed only on business days."
+  },
+  {
+    "id": 134,
+    "category": "General Bank Information",
+    "question": "What is SecureBank?",
+    "answer": "SecureBank is a fictional retail bank offering personal checking accounts, savings accounts, debit cards, credit cards, online banking, mobile banking, transfers, bill payments, personal loans, and customer support services."
+  },
+  {
+    "id": 135,
+    "category": "General Bank Information",
+    "question": "What are SecureBank customer support hours?",
+    "answer": "Customer support is available Monday to Friday from 8:00 AM to 8:00 PM and Saturday from 9:00 AM to 5:00 PM. Customer support is closed on Sunday."
+  },
+  {
+    "id": 136,
+    "category": "General Bank Information",
+    "question": "What is the SecureBank customer support phone number?",
+    "answer": "The SecureBank customer support phone number is 1-800-555-0188."
+  },
+  {
+    "id": 137,
+    "category": "General Bank Information",
+    "question": "What is the SecureBank support email address?",
+    "answer": "The SecureBank customer support email address is support@securebank.example."
+  },
+  {
+    "id": 138,
+    "category": "General Bank Information",
+    "question": "What is the lost or stolen card hotline?",
+    "answer": "The 24/7 lost or stolen card hotline is 1-800-555-0199."
+  },
+  {
+    "id": 139,
+    "category": "General Bank Information",
+    "question": "What is the SecureBank website?",
+    "answer": "The fictional SecureBank website for this student project is www.securebank.example."
+  },
+  {
+    "id": 140,
+    "category": "General Bank Information",
+    "question": "What is the SecureBank mobile app called?",
+    "answer": "The mobile app is called SecureBank Mobile and it is available for Android and iOS."
+  }
+]

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="SecureBank customer support FAQ chatbot using NLTK, TF-IDF, and cosine similarity."
+  />
+  <title>SecureBank Support Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <aside class="support-sidebar">
+      <div>
+        <a class="brand" href="#" aria-label="SecureBank home">
+          <span class="brand-icon">S</span>
+          <span>SecureBank</span>
+        </a>
+
+        <div class="sidebar-copy">
+          <span class="eyebrow">Customer Support</span>
+          <h1>How can we help?</h1>
+          <p>
+            Ask about accounts, cards, transfers, online banking, fees, security,
+            loans, and other common banking questions.
+          </p>
+        </div>
+
+        <div class="support-note">
+          <span class="status-dot"></span>
+          <div>
+            <strong>FAQ assistant is online</strong>
+            <p>Answers are matched from the SecureBank knowledge base.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="emergency-card">
+        <span>Lost or stolen card?</span>
+        <strong>1-800-555-0199</strong>
+        <small>Fictional number for this student project.</small>
+      </div>
+    </aside>
+
+    <section class="chat-area">
+      <header class="chat-header">
+        <div>
+          <span class="mobile-brand">SecureBank</span>
+          <h2>Support Assistant</h2>
+          <p>FAQ matching with NLP and cosine similarity</p>
+        </div>
+        <button id="clearChat" class="header-action" type="button">Clear chat</button>
+      </header>
+
+      <div id="chatMessages" class="messages" aria-live="polite">
+        <div class="message-row bot">
+          <div class="avatar">SB</div>
+          <div class="message-content">
+            <div class="message-bubble">
+              Hi! I'm the SecureBank FAQ assistant. Ask me a banking support question
+              and I'll look for the closest answer in the knowledge base.
+            </div>
+            <span class="message-meta">SecureBank Assistant</span>
+          </div>
+        </div>
+
+        <div class="quick-section" id="quickQuestions">
+          <span>Try asking</span>
+          <div class="quick-list">
+            <button type="button" data-question="I forgot my online banking password. What should I do?">
+              Reset my password
+            </button>
+            <button type="button" data-question="What should I do if my debit card is lost or stolen?">
+              Lost debit card
+            </button>
+            <button type="button" data-question="What is the daily ATM withdrawal limit?">
+              ATM withdrawal limit
+            </button>
+            <button type="button" data-question="How long does an external bank transfer take?">
+              Transfer timing
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-wrap">
+        <form id="chatForm" class="composer">
+          <textarea
+            id="questionInput"
+            rows="1"
+            maxlength="700"
+            placeholder="Ask a banking question..."
+            aria-label="Ask a question"
+          ></textarea>
+          <button id="sendButton" type="submit" aria-label="Send message">
+            <span>Send</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+        <p class="disclaimer">
+          Educational demo using fictional SecureBank information. Do not enter real
+          passwords, PINs, card numbers, or verification codes.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
