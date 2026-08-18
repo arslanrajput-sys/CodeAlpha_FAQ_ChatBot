@@ -195,4 +195,4 @@ This is a fictional educational bank. The chatbot:
 | Chat UI | HTML + CSS + JavaScript |
 | Deployment | GitHub + Vercel |
 
-<!-- Deployment refresh: environment configuration applied. -->
+<!-- Deployment refresh: Groq model permissions updated. -->
