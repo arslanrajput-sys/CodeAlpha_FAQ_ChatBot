@@ -1442,7 +1442,7 @@
   {
     "id": 241,
     "category": "Contact And Location",
-    "question": "What is SecureBank's main branch address?",
+    "question": "What is your address or SecureBank's main branch address?",
     "answer": "SecureBank's fictional main branch is located at 100 SecureBank Plaza, Riverton, NY 10001."
   },
   {
@@ -1460,7 +1460,7 @@
   {
     "id": 244,
     "category": "Branch Hours",
-    "question": "What are SecureBank's branch hours?",
+    "question": "What are your bank timings or SecureBank branch hours?",
     "answer": "The fictional main branch is open Monday through Friday from 9:00 AM to 5:00 PM Eastern Time and Saturday from 9:00 AM to 1:00 PM. It is closed on Sunday."
   },
   {
@@ -1472,7 +1472,7 @@
   {
     "id": 246,
     "category": "Branch Hours",
-    "question": "Is SecureBank open on Sunday?",
+    "question": "Are you or SecureBank open on Sunday?",
     "answer": "No. The fictional main branch and regular customer support are closed on Sunday. The lost or stolen card hotline remains available 24/7 at 1-800-555-0199."
   },
   {
@@ -1514,7 +1514,7 @@
   {
     "id": 253,
     "category": "Contact And Location",
-    "question": "What is the main SecureBank branch phone number?",
+    "question": "What is your branch phone number or contact number?",
     "answer": "The fictional main branch phone number is 1-212-555-0100. General customer support is available at 1-800-555-0188."
   },
   {
@@ -1568,7 +1568,7 @@
   {
     "id": 262,
     "category": "Bank Identification",
-    "question": "What is SecureBank's SWIFT or BIC code?",
+    "question": "What is your SWIFT code or SecureBank BIC code?",
     "answer": "SecureBank's fictional SWIFT/BIC code is SECBUS33. Confirm all international wire instructions with customer support before sending funds."
   },
   {
