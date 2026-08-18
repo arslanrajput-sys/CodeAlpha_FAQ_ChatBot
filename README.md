@@ -45,7 +45,7 @@ The repository contains:
 - `data/knowledge_base.txt` — the complete human-readable SecureBank knowledge base.
 - `data/faqs.json` — structured FAQ data used by the Python matcher.
 
-**Total structured FAQ entries: 240**
+**Total structured FAQ entries: 270**
 
 The knowledge base covers:
 
@@ -72,6 +72,7 @@ The knowledge base covers:
 - Account ownership, beneficiaries, deceased-account support, and accessibility
 - Mobile deposits, digital wallets, automatic payments, and tax documents
 - Expanded fraud, dispute, credit-card, loan, ATM, branch, and transfer support
+- Fictional addresses, branch/drive-through hours, contact channels, routing and SWIFT details
 
 ## Project structure
 
@@ -190,7 +191,7 @@ This is a fictional educational bank. The chatbot:
 | Requirement | Implementation |
 |---|---|
 | Collect FAQs | `data/faqs.json` |
-| Questions and answers | 240 structured FAQ entries |
+| Questions and answers | 270 structured FAQ entries |
 | NLP preprocessing | NLTK tokenizer + Porter stemmer |
 | Similarity matching | TF-IDF + cosine similarity |
 | Best answer selection | Highest scoring FAQ above threshold |
