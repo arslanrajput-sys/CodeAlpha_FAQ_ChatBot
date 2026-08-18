@@ -3,110 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="SecureBank customer support FAQ chatbot using NLTK, TF-IDF, and cosine similarity."
-  />
-  <title>SecureBank Support Assistant</title>
+  <meta name="description" content="Get quick answers to common SecureBank support questions." />
+  <title>Help Centre | SecureBank</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="shell">
-    <aside class="support-sidebar">
-      <div>
-        <a class="brand" href="#" aria-label="SecureBank home">
-          <span class="brand-icon">S</span>
-          <span>SecureBank</span>
-        </a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="SecureBank Help Centre">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>SecureBank</span>
+    </a>
+    <div class="header-status"><span></span> Help Centre</div>
+  </header>
 
-        <div class="sidebar-copy">
-          <span class="eyebrow">Customer Support</span>
-          <h1>How can we help?</h1>
-          <p>
-            Ask about accounts, cards, transfers, online banking, fees, security,
-            loans, and other common banking questions.
-          </p>
-        </div>
+  <main class="support-page">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="section-label">Customer support</p>
+      <h1 id="page-title">Find the answer<br />you need.</h1>
+      <p class="intro-copy">Search our help centre for quick guidance on your account, cards, transfers, online banking and more.</p>
 
-        <div class="support-note">
-          <span class="status-dot"></span>
-          <div>
-            <strong>FAQ assistant is online</strong>
-            <p>Answers are matched from the SecureBank knowledge base.</p>
-          </div>
-        </div>
+      <div class="topic-grid" aria-label="Popular support topics">
+        <div class="topic-card"><span class="topic-number">01</span><strong>Cards &amp; security</strong><p>Lost cards, card controls and suspicious activity.</p></div>
+        <div class="topic-card"><span class="topic-number">02</span><strong>Digital banking</strong><p>Sign-in help, passwords and mobile banking.</p></div>
+        <div class="topic-card"><span class="topic-number">03</span><strong>Payments &amp; transfers</strong><p>Transfer timing, limits, payments and deposits.</p></div>
       </div>
 
-      <div class="emergency-card">
-        <span>Lost or stolen card?</span>
-        <strong>1-800-555-0199</strong>
-        <small>Fictional number for this student project.</small>
-      </div>
-    </aside>
+      <aside class="urgent-note">
+        <div class="urgent-icon" aria-hidden="true">!</div>
+        <div><strong>Lost or stolen card?</strong><p>Call <b>1-800-555-0199</b> right away.</p></div>
+      </aside>
+    </section>
 
-    <section class="chat-area">
-      <header class="chat-header">
-        <div>
-          <span class="mobile-brand">SecureBank</span>
-          <h2>Support Assistant</h2>
-          <p>FAQ matching with NLP and cosine similarity</p>
-        </div>
-        <button id="clearChat" class="header-action" type="button">Clear chat</button>
+    <section class="chat-panel" aria-label="SecureBank support search">
+      <header class="panel-header">
+        <div><p class="section-label">Ask a question</p><h2>SecureBank support</h2></div>
+        <button id="clearChat" class="clear-button" type="button">Start over</button>
       </header>
 
       <div id="chatMessages" class="messages" aria-live="polite">
         <div class="message-row bot">
-          <div class="avatar">SB</div>
-          <div class="message-content">
-            <div class="message-bubble">
-              Hi! I'm the SecureBank FAQ assistant. Ask me a banking support question
-              and I'll look for the closest answer in the knowledge base.
-            </div>
-            <span class="message-meta">SecureBank Assistant</span>
-          </div>
+          <div class="avatar" aria-hidden="true">S</div>
+          <div class="message-content"><div class="message-bubble">Welcome. What can we help you with today?</div><span class="message-meta">SecureBank support</span></div>
         </div>
 
         <div class="quick-section" id="quickQuestions">
-          <span>Try asking</span>
+          <span>Popular questions</span>
           <div class="quick-list">
-            <button type="button" data-question="I forgot my online banking password. What should I do?">
-              Reset my password
-            </button>
-            <button type="button" data-question="What should I do if my debit card is lost or stolen?">
-              Lost debit card
-            </button>
-            <button type="button" data-question="What is the daily ATM withdrawal limit?">
-              ATM withdrawal limit
-            </button>
-            <button type="button" data-question="How long does an external bank transfer take?">
-              Transfer timing
-            </button>
+            <button type="button" data-question="I forgot my online banking password. What should I do?">Reset my password</button>
+            <button type="button" data-question="What should I do if my debit card is lost or stolen?">My card is missing</button>
+            <button type="button" data-question="What is the daily ATM withdrawal limit?">ATM withdrawal limit</button>
+            <button type="button" data-question="How long does an external bank transfer take?">Transfer timing</button>
           </div>
         </div>
       </div>
 
       <div class="composer-wrap">
         <form id="chatForm" class="composer">
-          <textarea
-            id="questionInput"
-            rows="1"
-            maxlength="700"
-            placeholder="Ask a banking question..."
-            aria-label="Ask a question"
-          ></textarea>
-          <button id="sendButton" type="submit" aria-label="Send message">
-            <span>Send</span>
-            <span aria-hidden="true">↗</span>
-          </button>
+          <textarea id="questionInput" rows="1" maxlength="700" placeholder="Type your question here" aria-label="Ask a SecureBank support question"></textarea>
+          <button id="sendButton" type="submit" aria-label="Send question"><span>Send</span><span aria-hidden="true">→</span></button>
         </form>
-        <p class="disclaimer">
-          Educational demo using fictional SecureBank information. Do not enter real
-          passwords, PINs, card numbers, or verification codes.
-        </p>
+        <p class="disclaimer">Never share passwords, PINs, full card numbers or verification codes.</p>
       </div>
     </section>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
