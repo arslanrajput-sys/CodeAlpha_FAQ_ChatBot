@@ -3,7 +3,6 @@ const input = document.getElementById("questionInput");
 const sendButton = document.getElementById("sendButton");
 const messages = document.getElementById("chatMessages");
 const clearChat = document.getElementById("clearChat");
-const quickQuestions = document.getElementById("quickQuestions");
 
 function escapeHTML(value) {
   return String(value)
@@ -21,6 +20,20 @@ function scrollToBottom() {
 function autoResize() {
   input.style.height = "auto";
   input.style.height = `${Math.min(input.scrollHeight, 140)}px`;
+}
+
+function quickQuestionsMarkup() {
+  return `
+    <div class="quick-section" id="quickQuestions">
+      <span>Popular questions</span>
+      <div class="quick-list">
+        <button type="button" data-question="I forgot my online banking password. What should I do?">Reset my password</button>
+        <button type="button" data-question="What should I do if my debit card is lost or stolen?">Lost or stolen card</button>
+        <button type="button" data-question="What is the daily ATM withdrawal limit?">ATM withdrawal limit</button>
+        <button type="button" data-question="How long does an external bank transfer take?">Transfer timing</button>
+      </div>
+    </div>
+  `;
 }
 
 function addUserMessage(text) {
@@ -50,7 +63,7 @@ function addBotMessage(answer, data = {}) {
   }
 
   row.innerHTML = `
-    <div class="avatar">SB</div>
+    <div class="avatar">S</div>
     <div class="message-content">
       <div class="message-bubble">${escapeHTML(answer)}</div>
       ${matchInfo}
@@ -67,7 +80,7 @@ function showTyping() {
   row.className = "message-row bot";
   row.id = "typingIndicator";
   row.innerHTML = `
-    <div class="avatar">SB</div>
+    <div class="avatar">S</div>
     <div class="message-content">
       <div class="message-bubble typing-dots" aria-label="Assistant is thinking">
         <span></span><span></span><span></span>
@@ -86,9 +99,7 @@ async function askQuestion(question) {
   const cleanQuestion = question.trim();
   if (!cleanQuestion || sendButton.disabled) return;
 
-  if (quickQuestions) {
-    quickQuestions.style.display = "none";
-  }
+  document.getElementById("quickQuestions")?.remove();
 
   addUserMessage(cleanQuestion);
   input.value = "";
@@ -140,23 +151,22 @@ input.addEventListener("keydown", (event) => {
   }
 });
 
-document.querySelectorAll("[data-question]").forEach((button) => {
-  button.addEventListener("click", () => {
-    askQuestion(button.dataset.question);
-  });
+messages.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-question]");
+  if (!button) return;
+  askQuestion(button.dataset.question || "");
 });
 
 clearChat.addEventListener("click", () => {
   messages.innerHTML = `
     <div class="message-row bot">
-      <div class="avatar">SB</div>
+      <div class="avatar">S</div>
       <div class="message-content">
-        <div class="message-bubble">
-          Welcome back. What can we help you with?
-        </div>
+        <div class="message-bubble">Welcome. What can we help you with today?</div>
         <span class="message-meta">SecureBank support</span>
       </div>
     </div>
+    ${quickQuestionsMarkup()}
   `;
   input.value = "";
   autoResize();
