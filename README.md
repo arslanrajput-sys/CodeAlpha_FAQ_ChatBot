@@ -27,6 +27,17 @@ The project uses a **fictional bank called SecureBank**. It is intended for cour
 
 The matching engine uses both word TF-IDF and a small character TF-IDF component to make short questions and minor spelling differences more reliable.
 
+## Optional grounded AI answers (Groq)
+
+For more natural answers to paraphrased questions, the chatbot can use the free Groq API with `openai/gpt-oss-120b`. It first retrieves the five closest FAQ records, then asks the model to answer using only those records. This keeps answers grounded in the supplied knowledge base.
+
+1. Create a Groq API key at https://console.groq.com/keys.
+2. In Vercel, open **Project Settings → Environment Variables**.
+3. Add `GROQ_API_KEY` with your key for Production, Preview, and Development.
+4. Redeploy the project.
+
+Never put a real key in source code or commit it to GitHub. If `GROQ_API_KEY` is not configured or the service is unavailable, the chatbot automatically uses TF-IDF matching only.
+
 ## Knowledge base
 
 The repository contains:
