@@ -2,6 +2,7 @@ import json
 import sys
 from http.server import BaseHTTPRequestHandler
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
@@ -24,15 +25,42 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _send_file(self, file_path: Path, content_type: str):
+        body = file_path.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Cache-Control", "public, max-age=300")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_GET(self):
-        self._send_json({
-            "ok": True,
-            "service": "SecureBank FAQ Chatbot",
-            "method": "NLTK preprocessing + TF-IDF + cosine similarity",
-        })
+        request_path = urlparse(self.path).path
+        static_files = {
+            "/": ("index.html", "text/html; charset=utf-8"),
+            "/index.html": ("index.html", "text/html; charset=utf-8"),
+            "/styles.css": ("styles.css", "text/css; charset=utf-8"),
+            "/script.js": ("script.js", "application/javascript; charset=utf-8"),
+        }
+
+        if request_path in static_files:
+            filename, content_type = static_files[request_path]
+            return self._send_file(ROOT / filename, content_type)
+
+        if request_path == "/api/chat":
+            return self._send_json({
+                "ok": True,
+                "service": "SecureBank FAQ Chatbot",
+                "method": "NLTK preprocessing + TF-IDF + cosine similarity",
+            })
+
+        return self._send_json({"error": "Not found."}, 404)
 
     def do_POST(self):
         try:
+            if urlparse(self.path).path != "/api/chat":
+                return self._send_json({"error": "Not found."}, 404)
+
             content_length = int(self.headers.get("Content-Length", "0"))
             if content_length <= 0:
                 return self._send_json({"error": "Request body is required."}, 400)
