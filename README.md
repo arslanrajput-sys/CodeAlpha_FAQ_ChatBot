@@ -1,200 +1,88 @@
 # SecureBank FAQ Chatbot
 
-A complete student FAQ chatbot project built with:
+A clean, modern customer-support chatbot designed for a fictional banking service. SecureBank helps users quickly find answers to common banking questions through a simple and easy-to-use chat experience.
 
-- **Frontend:** HTML + CSS + JavaScript
-- **Backend:** Python
-- **NLP:** NLTK
-- **Matching:** TF-IDF + Cosine Similarity
-- **FAQ storage:** JSON
-- **Deployment:** GitHub + Vercel
+## Live Demo
 
-The project uses a **fictional bank called SecureBank**. It is intended for coursework and demonstration purposes only.
+**Try the chatbot:** https://code-alpha-faq-chat-bot.vercel.app/
 
-## What the chatbot does
+## About the Project
 
-1. Accepts a customer question from the chat interface.
-2. Preprocesses the text using NLTK:
-   - tokenization
-   - lowercase normalization
-   - stopword removal
-   - Porter stemming
-3. Converts the stored FAQ questions and the user query into TF-IDF vectors.
-4. Measures cosine similarity.
-5. Selects the FAQ with the highest similarity score.
-6. Returns the stored answer if the score passes the confidence threshold.
-7. Returns a safe fallback response if no FAQ is similar enough.
+SecureBank FAQ Chatbot was created to make everyday customer-support information easier to access. Instead of searching through long help pages, users can simply type a question and receive a relevant response in a conversational format.
 
-The matching engine uses both word TF-IDF and a small character TF-IDF component to make short questions and minor spelling differences more reliable.
+The interface is intentionally simple, professional, and focused on usability across desktop and mobile devices.
 
-## Optional grounded AI answers (Gemini)
+## Key Features
 
-For more natural answers to paraphrased questions, the chatbot can use the Gemini API with `gemini-3.5-flash-lite`. It first retrieves the closest FAQ records. SecureBank questions are answered from that context; general questions are answered by the model without unrelated FAQ context.
+- Simple conversational support experience
+- Fast answers to common banking questions
+- Large banking FAQ knowledge base
+- Helpful suggested questions for new users
+- Support for naturally worded questions
+- Clear responses for common customer-service topics
+- Responsive layout for desktop, tablet, and mobile
+- Clean and accessible user interface
+- Easy option to clear the conversation and start again
+- Safety reminders for sensitive banking information
 
-1. Create a Gemini API key at https://aistudio.google.com/app/apikey.
-2. In Vercel, open **Project Settings → Environment Variables**.
-3. Add `GEMINI_API_KEY` with your key for Production, Preview, and Development.
-4. Redeploy the project.
+## Support Topics
 
-Never put a real key in source code or commit it to GitHub. If `GEMINI_API_KEY` is not configured or the service is unavailable, the chatbot automatically uses TF-IDF matching only.
+The chatbot can help with questions related to:
 
-## Knowledge base
-
-The repository contains:
-
-- `data/knowledge_base.txt` — the complete human-readable SecureBank knowledge base.
-- `data/faqs.json` — structured FAQ data used by the Python matcher.
-
-**Total structured FAQ entries: 270**
-
-The knowledge base covers:
-
-- Checking accounts
-- Savings accounts
-- Debit cards
-- Credit cards
+- Checking and savings accounts
+- Debit and credit cards
+- Lost or stolen cards
 - Online and mobile banking
-- Password/login problems
-- Transfers and wires
-- ATMs
-- Direct deposit
-- Checks
-- Bill Pay
+- Password and sign-in help
+- Transfers and wire payments
+- ATM services and withdrawal limits
+- Direct deposits
+- Checks and mobile deposits
+- Bill payments
 - Overdrafts and fees
-- Fraud/security
+- Fraud and suspicious activity
+- Refunds and disputes
 - Personal loans
 - Account alerts
-- Branch services
+- Branch services and opening hours
 - Pending transactions
-- Refunds and disputes
-- Account restrictions
+- Digital wallets and automatic payments
+- Account ownership and beneficiaries
 - Customer support information
-- Account ownership, beneficiaries, deceased-account support, and accessibility
-- Mobile deposits, digital wallets, automatic payments, and tax documents
-- Expanded fraud, dispute, credit-card, loan, ATM, branch, and transfer support
-- Fictional addresses, branch/drive-through hours, contact channels, routing and SWIFT details
 
-## Project structure
+## How to Use
 
-```text
-securebank-faq-chatbot/
-├── api/
-│   └── chat.py
-├── data/
-│   ├── faqs.json
-│   └── knowledge_base.txt
-├── lib/
-│   ├── __init__.py
-│   └── chatbot.py
-├── scripts/
-│   └── test_chatbot.py
-├── index.html
-├── styles.css
-├── script.js
-├── requirements.txt
-├── vercel.json
-├── .gitignore
-└── README.md
-```
+1. Open the live chatbot.
+2. Type your banking question in the message box.
+3. Send the question to receive an answer.
+4. Use the suggested questions if you are not sure what to ask.
+5. Select **Start over** whenever you want to begin a new conversation.
 
-## Run the matching engine locally
+## Example Questions
 
-Create a virtual environment:
+- What should I do if my debit card is lost?
+- How can I reset my online banking password?
+- What is the daily ATM withdrawal limit?
+- How long does an external bank transfer take?
+- What are the branch opening hours?
+- How do I report suspicious activity?
 
-```bash
-python -m venv .venv
-```
+## User Experience
 
-Activate it, then install dependencies:
+The project uses a minimal banking-inspired design with clear typography, comfortable spacing, focused chat controls, and responsive behavior. The goal is to make the support experience feel familiar, straightforward, and professional without unnecessary visual clutter.
 
-```bash
-pip install -r requirements.txt
-```
+## Important Note
 
-Test the FAQ matcher:
+SecureBank is a **fictional bank created for educational and demonstration purposes**. The chatbot does not connect to real bank accounts and cannot perform financial transactions.
 
-```bash
-python scripts/test_chatbot.py
-```
+Users should never share passwords, PINs, full card numbers, verification codes, or other sensitive banking information in the chat.
 
-This test does not require any external AI API or API key.
+## Project Preview
 
-## Run the full app locally
+Visit the live project here:
 
-The easiest way to test the complete Vercel project locally is with the Vercel CLI:
+**https://code-alpha-faq-chat-bot.vercel.app/**
 
-```bash
-npm install -g vercel
-vercel dev
-```
+---
 
-Then open the local URL shown by Vercel.
-
-## Deploy with GitHub + Vercel
-
-1. Create a new GitHub repository.
-2. Upload all files from this project to the repository root.
-3. Push/commit the repository.
-4. Sign in to Vercel.
-5. Select **Add New → Project**.
-6. Import the GitHub repository.
-7. Leave the project settings at their defaults.
-8. Deploy.
-
-Vercel serves the HTML/CSS/JS frontend and runs `api/chat.py` as a Python serverless function.
-
-## API request
-
-The frontend sends:
-
-```json
-{
-  "question": "I forgot my online banking password"
-}
-```
-
-to:
-
-```text
-POST /api/chat
-```
-
-Example response:
-
-```json
-{
-  "answer": "Select \"Forgot Password\" on the login page...",
-  "matched": true,
-  "confidence": 0.72,
-  "matched_question": "I forgot my online banking password. What should I do?",
-  "category": "Online Banking"
-}
-```
-
-## Why no NLTK downloads are required
-
-The project intentionally uses `RegexpTokenizer` and `PorterStemmer`, which do not require downloading the NLTK `punkt` or `stopwords` datasets. A small stopword list is included directly in the project.
-
-This makes deployment on Vercel simpler and more reliable.
-
-## Safety
-
-This is a fictional educational bank. The chatbot:
-
-- does not access real bank accounts;
-- cannot move money or change account information;
-- never needs passwords, PINs, full card numbers, or verification codes;
-- returns answers only from the supplied FAQ knowledge base.
-
-## Assignment requirement mapping
-
-| Requirement | Implementation |
-|---|---|
-| Collect FAQs | `data/faqs.json` |
-| Questions and answers | 270 structured FAQ entries |
-| NLP preprocessing | NLTK tokenizer + Porter stemmer |
-| Similarity matching | TF-IDF + cosine similarity |
-| Best answer selection | Highest scoring FAQ above threshold |
-| Chatbot response | Python `/api/chat` endpoint |
-| Chat UI | HTML + CSS + JavaScript |
-| Deployment | GitHub + Vercel |
+**CodeAlpha FAQ Chatbot Project**
