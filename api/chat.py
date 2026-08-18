@@ -171,6 +171,19 @@ class handler(BaseHTTPRequestHandler):
                     400,
                 )
 
+            normalized_question = " ".join(question.lower().split()).rstrip("!.,?")
+            if normalized_question in {
+                "hi", "hello", "hey", "good morning", "good afternoon", "good evening"
+            }:
+                return self._send_json({
+                    "answer": "Hello! How can I help you today?",
+                    "matched": False,
+                    "confidence": 1.0,
+                    "matched_question": None,
+                    "category": "conversation",
+                    "source": "built-in",
+                })
+
             all_candidates = matcher.top_matches(question, limit=5)
             # Weak lexical matches are not useful context for a general question.
             has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.14)
