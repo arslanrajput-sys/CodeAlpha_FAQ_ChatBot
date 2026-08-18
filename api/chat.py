@@ -16,6 +16,30 @@ from lib.chatbot import FAQMatcher
 
 matcher = FAQMatcher(ROOT / "data" / "faqs.json")
 
+BANKING_TERMS = {
+    "securebank", "bank", "account", "checking", "saving", "savings",
+    "debit", "credit", "card", "pin", "atm", "cash", "deposit", "check",
+    "cheque", "balance", "transaction", "merchant", "payment", "bill",
+    "transfer", "wire", "routing", "overdraft", "fee", "refund", "dispute",
+    "fraud", "scam", "loan", "statement", "interest", "branch", "wallet",
+    "autopay", "direct deposit", "mobile banking", "online banking",
+    "verification code", "beneficiary", "payee", "withdrawal",
+    "mortgage", "crypto", "insurance", "cashier", "payroll", "tax form",
+}
+BANKING_PHRASES = {term for term in BANKING_TERMS if " " in term}
+BANKING_STEMS = {
+    matcher.stemmer.stem(term) for term in BANKING_TERMS if " " not in term
+}
+
+
+def _is_banking_question(question: str) -> bool:
+    """Separate SecureBank support requests from unrelated general questions."""
+    normalized = question.lower().replace("-", " ")
+    stems = set(matcher.preprocess(normalized).split())
+    return bool(stems & BANKING_STEMS) or any(
+        phrase in normalized for phrase in BANKING_PHRASES
+    )
+
 
 def _gemini_models() -> tuple[str, ...]:
     """Return the configured Gemini model followed by stable fallbacks."""
@@ -190,9 +214,15 @@ class handler(BaseHTTPRequestHandler):
                 })
 
             all_candidates = matcher.top_matches(question, limit=5)
-            # Weak lexical matches are not useful context for a general question.
-            has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.25)
-            candidates = all_candidates if has_relevant_faq else []
+            is_banking_question = _is_banking_question(question)
+            has_relevant_faq = bool(
+                is_banking_question
+                and all_candidates
+                and all_candidates[0]["score"] >= 0.25
+            )
+            # Banking questions receive the five closest knowledge records even when
+            # phrased differently. Unrelated questions go to Gemini without bank context.
+            candidates = all_candidates if is_banking_question else []
             ai_answer, ai_error = answer_with_gemini(question, candidates)
 
             if ai_answer:
@@ -202,7 +232,7 @@ class handler(BaseHTTPRequestHandler):
                     "confidence": all_candidates[0]["score"] if has_relevant_faq else 0.0,
                     "matched_question": all_candidates[0]["question"] if has_relevant_faq else None,
                     "category": all_candidates[0].get("category") if has_relevant_faq else None,
-                    "source": "grounded-knowledge" if has_relevant_faq else "general-ai",
+                    "source": "grounded-knowledge" if is_banking_question else "general-ai",
                 }
             else:
                 # Keep FAQ matching available and return a safe diagnostic for logs.
