@@ -17,20 +17,19 @@ from lib.chatbot import FAQMatcher
 matcher = FAQMatcher(ROOT / "data" / "faqs.json")
 
 
-def answer_with_groq(question: str, candidates: list[dict]) -> str | None:
+def answer_with_groq(question: str, candidates: list[dict]) -> tuple[str | None, str | None]:
     """Use GPT-OSS for general answers, grounded by FAQ context when available."""
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        return None
+        return None, "GROQ_API_KEY is not configured."
 
     context = "\n\n".join(
         f"FAQ {index + 1}\nQuestion: {faq['question']}\nAnswer: {faq['answer']}"
         for index, faq in enumerate(candidates)
     ) or "No relevant SecureBank FAQ was provided."
     payload = {
-        "model": "openai/gpt-oss-120b",
         "temperature": 0.15,
-        "max_tokens": 350,
+        "max_tokens": 240,
         "messages": [
             {
                 "role": "system",
@@ -50,23 +49,30 @@ def answer_with_groq(question: str, candidates: list[dict]) -> str | None:
             },
         ],
     }
-    request = Request(
-        "https://api.groq.com/openai/v1/chat/completions",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
+    last_error = "Unknown Groq API error."
+    # The second model keeps the app working if the larger model is unavailable.
+    for model in ("openai/gpt-oss-120b", "openai/gpt-oss-20b"):
+        payload["model"] = model
+        request = Request(
+            "https://api.groq.com/openai/v1/chat/completions",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            method="POST",
+        )
+        try:
+            with urlopen(request, timeout=8) as response:
+                result = json.loads(response.read().decode("utf-8"))
+            return result["choices"][0]["message"]["content"].strip(), None
+        except HTTPError as exc:
+            last_error = f"Groq returned HTTP {exc.code} for {model}."
+        except (URLError, KeyError, IndexError, TimeoutError, json.JSONDecodeError) as exc:
+            last_error = f"Groq request failed for {model}: {exc}."
 
-    try:
-        with urlopen(request, timeout=8) as response:
-            result = json.loads(response.read().decode("utf-8"))
-        return result["choices"][0]["message"]["content"].strip()
-    except (HTTPError, URLError, KeyError, IndexError, TimeoutError, json.JSONDecodeError) as exc:
-        print(f"Groq API error: {exc}")
-        return None
+    print(last_error)
+    return None, last_error
 
 
 class handler(BaseHTTPRequestHandler):
@@ -138,7 +144,7 @@ class handler(BaseHTTPRequestHandler):
             # Weak lexical matches are not useful context for a general question.
             has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.14)
             candidates = all_candidates if has_relevant_faq else []
-            ai_answer = answer_with_groq(question, candidates)
+            ai_answer, ai_error = answer_with_groq(question, candidates)
 
             if ai_answer:
                 result = {
@@ -150,9 +156,10 @@ class handler(BaseHTTPRequestHandler):
                     "source": "grounded-knowledge" if has_relevant_faq else "general-ai",
                 }
             else:
-                # Keep the project fully usable if the API key is absent or rate-limited.
+                # Keep FAQ matching available and return a safe diagnostic for logs.
                 result = matcher.match(question)
                 result["source"] = "faq-matching"
+                result["ai_error"] = ai_error
             return self._send_json(result)
 
         except json.JSONDecodeError:
