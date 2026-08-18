@@ -1,7 +1,7 @@
 BANK CUSTOMER SUPPORT CHATBOT — KNOWLEDGE BASE
 Fictional Bank: SecureBank
 Purpose: Training / student FAQ chatbot project
-Version: 1.0
+Version: 2.0
 
 IMPORTANT
 This is a fictional bank knowledge base created for an educational chatbot project.
@@ -30,9 +30,48 @@ Customer Support Phone:
 Customer Support Email:
 support@securebank.example
 
+Main Branch and Headquarters (Fictional):
+100 SecureBank Plaza
+Riverton, NY 10001
+
+General Mailing Address (Fictional):
+P.O. Box 5550
+Riverton, NY 10002
+
+Main Branch Phone:
+1-212-555-0100
+
+International Customer Support:
++1-212-555-0188
+
+Main Branch Hours (Eastern Time):
+Monday to Friday: 9:00 AM to 5:00 PM
+Saturday: 9:00 AM to 1:00 PM
+Sunday: Closed
+
+Drive-Through Hours (Eastern Time):
+Monday to Friday: 8:30 AM to 6:00 PM
+Saturday: 9:00 AM to 1:00 PM
+Sunday: Closed
+
+ATM Availability:
+Outdoor ATMs are generally available 24/7 where site access permits.
+
+Holiday Hours:
+Branches are closed on major U.S. bank holidays. Digital banking and eligible ATMs remain available, but processing may wait until the next business day.
+
+Fictional Routing Number:
+021000999
+
+Fictional SWIFT/BIC Code:
+SECBUS33
+
 Lost or Stolen Card Hotline:
 1-800-555-0199
 Available 24 hours a day, 7 days a week.
+
+International Lost or Stolen Card Hotline:
++1-212-555-0199
 
 Website:
 www.securebank.example
