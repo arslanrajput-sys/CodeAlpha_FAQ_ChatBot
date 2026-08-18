@@ -27,6 +27,7 @@ BANKING_TERMS = {
     "mortgage", "crypto", "insurance", "cashier", "payroll", "tax form",
     "address", "hours", "location", "contact", "phone", "email", "holiday",
     "swift", "iban", "headquarters", "mailing", "drive through", "appointment",
+    "timing", "open", "close",
 }
 BANKING_PHRASES = {term for term in BANKING_TERMS if " " in term}
 BANKING_STEMS = {
