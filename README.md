@@ -27,16 +27,16 @@ The project uses a **fictional bank called SecureBank**. It is intended for cour
 
 The matching engine uses both word TF-IDF and a small character TF-IDF component to make short questions and minor spelling differences more reliable.
 
-## Optional grounded AI answers (Groq)
+## Optional grounded AI answers (Gemini)
 
-For more natural answers to paraphrased questions, the chatbot can use the free Groq API with `openai/gpt-oss-120b`. It first retrieves the closest FAQ records. SecureBank questions are answered from that context; general questions are answered by the model without unrelated FAQ context.
+For more natural answers to paraphrased questions, the chatbot can use the Gemini API with `gemini-2.5-flash-lite`. It first retrieves the closest FAQ records. SecureBank questions are answered from that context; general questions are answered by the model without unrelated FAQ context.
 
-1. Create a Groq API key at https://console.groq.com/keys.
+1. Create a Gemini API key at https://aistudio.google.com/app/apikey.
 2. In Vercel, open **Project Settings → Environment Variables**.
-3. Add `GROQ_API_KEY` with your key for Production, Preview, and Development.
+3. Add `GEMINI_API_KEY` with your key for Production, Preview, and Development.
 4. Redeploy the project.
 
-Never put a real key in source code or commit it to GitHub. If `GROQ_API_KEY` is not configured or the service is unavailable, the chatbot automatically uses TF-IDF matching only.
+Never put a real key in source code or commit it to GitHub. If `GEMINI_API_KEY` is not configured or the service is unavailable, the chatbot automatically uses TF-IDF matching only.
 
 ## Knowledge base
 
@@ -194,5 +194,3 @@ This is a fictional educational bank. The chatbot:
 | Chatbot response | Python `/api/chat` endpoint |
 | Chat UI | HTML + CSS + JavaScript |
 | Deployment | GitHub + Vercel |
-
-<!-- Deployment refresh: Groq model permissions updated. -->
