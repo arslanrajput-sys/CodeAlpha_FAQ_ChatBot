@@ -17,28 +17,26 @@ from lib.chatbot import FAQMatcher
 matcher = FAQMatcher(ROOT / "data" / "faqs.json")
 
 
-def _groq_models() -> tuple[str, ...]:
-    """Return configured and fallback models without duplicates."""
-    configured_model = os.environ.get("GROQ_MODEL", "").strip()
+def _gemini_models() -> tuple[str, ...]:
+    """Return the configured Gemini model followed by stable fallbacks."""
+    configured_model = os.environ.get("GEMINI_MODEL", "").strip()
     return tuple(dict.fromkeys(filter(None, (
         configured_model,
-        "groq/compound-mini",
-        "qwen/qwen3.6-27b",
-        "openai/gpt-oss-120b",
-        "openai/gpt-oss-20b",
+        "gemini-2.5-flash-lite",
+        "gemini-2.5-flash",
     ))))
 
 
-def _groq_http_error(exc: HTTPError, model: str) -> str:
-    """Extract Groq's safe error code/message so permission failures are actionable."""
+def _gemini_http_error(exc: HTTPError, model: str) -> str:
+    """Extract Google's safe error status/message for deployment diagnostics."""
     detail = ""
     try:
         body = exc.read().decode("utf-8", errors="replace")
         payload = json.loads(body)
         error = payload.get("error", {})
         message = str(error.get("message", "")).strip()
-        code = str(error.get("code", "")).strip()
-        detail = " ".join(part for part in (code, message) if part)
+        status = str(error.get("status", "")).strip()
+        detail = " ".join(part for part in (status, message) if part)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError, AttributeError):
         detail = ""
 
@@ -46,61 +44,68 @@ def _groq_http_error(exc: HTTPError, model: str) -> str:
     return f"{model} returned HTTP {exc.code}{suffix}"
 
 
-def answer_with_groq(question: str, candidates: list[dict]) -> tuple[str | None, str | None]:
-    """Use Groq for general answers, grounded by FAQ context when available."""
-    api_key = os.environ.get("GROQ_API_KEY")
+def answer_with_gemini(question: str, candidates: list[dict]) -> tuple[str | None, str | None]:
+    """Use Gemini for general answers, grounded by FAQ context when available."""
+    api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        return None, "GROQ_API_KEY is not configured."
+        return None, "GEMINI_API_KEY is not configured."
 
     context = "\n\n".join(
         f"FAQ {index + 1}\nQuestion: {faq['question']}\nAnswer: {faq['answer']}"
         for index, faq in enumerate(candidates)
     ) or "No relevant SecureBank FAQ was provided."
     payload = {
-        "temperature": 0.15,
-        "max_tokens": 240,
-        "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "You are a helpful general assistant on the SecureBank website. "
-                    "For a question about SecureBank, use the FAQ context as the source "
-                    "of truth and do not invent bank policies, fees, limits, timelines, "
-                    "or procedures. If a specific SecureBank detail is not in the context, "
-                    "say you cannot confirm it and advise contacting SecureBank support. "
-                    "For general, non-SecureBank questions, answer normally and concisely. "
-                    "Do not provide personalized financial, legal, or medical advice."
-                ),
-            },
-            {
-                "role": "user",
-                "content": f"Customer question: {question}\n\nFAQ context:\n{context}",
-            },
-        ],
+        "systemInstruction": {
+            "parts": [
+                {
+                    "text": (
+                        "You are a helpful general assistant on the SecureBank website. "
+                        "For a question about SecureBank, use the FAQ context as the source "
+                        "of truth and do not invent bank policies, fees, limits, timelines, "
+                        "or procedures. If a specific SecureBank detail is not in the context, "
+                        "say you cannot confirm it and advise contacting SecureBank support. "
+                        "For general, non-SecureBank questions, answer normally and concisely. "
+                        "Do not provide personalized financial, legal, or medical advice."
+                    )
+                }
+            ]
+        },
+        "contents": [{
+            "role": "user",
+            "parts": [{
+                "text": f"Customer question: {question}\n\nFAQ context:\n{context}"
+            }],
+        }],
+        "generationConfig": {
+            "temperature": 0.2,
+            "maxOutputTokens": 300,
+        },
     }
     errors = []
-    # Try multiple current Groq models so one restricted model does not disable chat.
-    for model in _groq_models():
-        payload["model"] = model
+    for model in _gemini_models():
         request = Request(
-            "https://api.groq.com/openai/v1/chat/completions",
+            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
             data=json.dumps(payload).encode("utf-8"),
             headers={
-                "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
+                "x-goog-api-key": api_key,
             },
             method="POST",
         )
         try:
-            with urlopen(request, timeout=10) as response:
+            with urlopen(request, timeout=15) as response:
                 result = json.loads(response.read().decode("utf-8"))
-            return result["choices"][0]["message"]["content"].strip(), None
+            parts = result["candidates"][0]["content"]["parts"]
+            answer = "".join(str(part.get("text", "")) for part in parts).strip()
+            if answer:
+                return answer, None
+            errors.append(f"{model} returned an empty response")
         except HTTPError as exc:
-            errors.append(_groq_http_error(exc, model))
+            errors.append(_gemini_http_error(exc, model))
         except (URLError, KeyError, IndexError, TimeoutError, json.JSONDecodeError) as exc:
             errors.append(f"{model} request failed: {exc}")
 
-    error_summary = "Groq models failed | " + " | ".join(errors)
+    error_summary = "Gemini models failed | " + " | ".join(errors)
     print(error_summary)
     return None, error_summary
 
@@ -142,9 +147,9 @@ class handler(BaseHTTPRequestHandler):
             return self._send_json({
                 "ok": True,
                 "service": "SecureBank FAQ Chatbot",
-                "method": "FAQ retrieval + Groq answers",
-                "ai_enabled": bool(os.environ.get("GROQ_API_KEY")),
-                "configured_model": os.environ.get("GROQ_MODEL") or "automatic",
+                "method": "FAQ retrieval + Gemini answers",
+                "ai_enabled": bool(os.environ.get("GEMINI_API_KEY")),
+                "configured_model": os.environ.get("GEMINI_MODEL") or "automatic",
             })
 
         return self._send_json({"error": "Not found."}, 404)
@@ -188,7 +193,7 @@ class handler(BaseHTTPRequestHandler):
             # Weak lexical matches are not useful context for a general question.
             has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.14)
             candidates = all_candidates if has_relevant_faq else []
-            ai_answer, ai_error = answer_with_groq(question, candidates)
+            ai_answer, ai_error = answer_with_gemini(question, candidates)
 
             if ai_answer:
                 result = {
