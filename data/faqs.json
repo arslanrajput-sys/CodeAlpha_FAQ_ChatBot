@@ -838,5 +838,605 @@
     "category": "General Bank Information",
     "question": "What is the SecureBank mobile app called?",
     "answer": "The mobile app is called SecureBank Mobile and it is available for Android and iOS."
+  },
+  {
+    "id": 141,
+    "category": "Account Opening And Eligibility",
+    "question": "Can a minor open a SecureBank account?",
+    "answer": "A minor may be eligible for an account with a parent or legal guardian. Contact SecureBank or visit a branch to confirm the available account options and required documents."
+  },
+  {
+    "id": 142,
+    "category": "Account Opening And Eligibility",
+    "question": "Can a non-US citizen open an account?",
+    "answer": "Account eligibility depends on the identification and tax information available. Visit a branch or contact customer support to confirm which documents SecureBank can accept."
+  },
+  {
+    "id": 143,
+    "category": "Account Opening And Eligibility",
+    "question": "How long does it take to open an account online?",
+    "answer": "Many applications can be completed in one session, but approval may take longer if SecureBank needs additional identity verification or documents."
+  },
+  {
+    "id": 144,
+    "category": "Account Opening And Eligibility",
+    "question": "Why was my account application declined?",
+    "answer": "An application may be declined because identity could not be verified, required information was incomplete, or eligibility requirements were not met. Contact support for available next steps."
+  },
+  {
+    "id": 145,
+    "category": "Account Ownership",
+    "question": "How do I remove a joint owner from my account?",
+    "answer": "Removing a joint owner may require consent from all owners or closing the joint account and opening a new account. Contact SecureBank for the correct process."
+  },
+  {
+    "id": 146,
+    "category": "Account Ownership",
+    "question": "How do I add or change an account beneficiary?",
+    "answer": "Contact customer support or visit a branch with valid identification to request a beneficiary update. Additional beneficiary information may be required."
+  },
+  {
+    "id": 147,
+    "category": "Account Maintenance",
+    "question": "What is a dormant account?",
+    "answer": "An account may become dormant after an extended period without customer-initiated activity. Contact SecureBank to verify your identity and learn how to reactivate it."
+  },
+  {
+    "id": 148,
+    "category": "Account Maintenance",
+    "question": "Can I close an account with a negative balance?",
+    "answer": "No. Any negative balance and unresolved transactions normally must be settled before the account can be closed."
+  },
+  {
+    "id": 149,
+    "category": "Account Ownership",
+    "question": "What should I do when an account holder dies?",
+    "answer": "Contact SecureBank's customer support or visit a branch. The bank may require a death certificate, identification, and legal or estate documents before releasing information or funds."
+  },
+  {
+    "id": 150,
+    "category": "Account Opening And Eligibility",
+    "question": "Why does SecureBank need my Social Security number or tax ID?",
+    "answer": "SecureBank may need tax identification information to verify identity, comply with legal requirements, and report eligible account information. Never send a complete Social Security number through chat."
+  },
+  {
+    "id": 151,
+    "category": "Deposits",
+    "question": "When will a cash deposit be available?",
+    "answer": "Cash deposited with a teller is generally available promptly. Cash deposited at an eligible ATM may require verification before it becomes fully available."
+  },
+  {
+    "id": 152,
+    "category": "Mobile Check Deposit",
+    "question": "How should I endorse a check for mobile deposit?",
+    "answer": "Sign the back of the check and add any mobile-deposit wording shown in the SecureBank Mobile app before taking clear photos of both sides."
+  },
+  {
+    "id": 153,
+    "category": "Mobile Check Deposit",
+    "question": "What is my mobile check deposit limit?",
+    "answer": "Mobile deposit limits can vary by customer and account. Your current limit is displayed in the Mobile Check Deposit section before you submit a deposit."
+  },
+  {
+    "id": 154,
+    "category": "Mobile Check Deposit",
+    "question": "What checks cannot be deposited through the mobile app?",
+    "answer": "Ineligible items may include altered checks, duplicate deposits, certain foreign checks, incomplete checks, and checks not payable to an account owner. The app may provide additional restrictions."
+  },
+  {
+    "id": 155,
+    "category": "Mobile Check Deposit",
+    "question": "I deposited the same check twice. What should I do?",
+    "answer": "Do not attempt another deposit. Contact customer support promptly and keep the original check until SecureBank confirms the deposit status."
+  },
+  {
+    "id": 156,
+    "category": "Deposits",
+    "question": "Why was my deposited check returned?",
+    "answer": "A check may be returned because of insufficient funds, a stop payment, a closed account, missing information, an invalid signature, or suspected alteration."
+  },
+  {
+    "id": 157,
+    "category": "Deposits",
+    "question": "Why is my cash deposit still pending?",
+    "answer": "An ATM cash deposit may remain pending while the deposit is verified. Contact support if it remains pending beyond the time shown on your receipt or account."
+  },
+  {
+    "id": 158,
+    "category": "Deposits",
+    "question": "How can I get a copy of my deposit receipt?",
+    "answer": "Check the transaction details in online banking or the mobile app. For a teller or ATM receipt that is not available online, contact customer support."
+  },
+  {
+    "id": 159,
+    "category": "Money Transfers",
+    "question": "How do I edit a scheduled transfer?",
+    "answer": "Open scheduled transfers in online banking or the mobile app. If processing has not started, you may cancel the transfer and create a new one with the correct details."
+  },
+  {
+    "id": 160,
+    "category": "Money Transfers",
+    "question": "How do I verify an external bank account?",
+    "answer": "SecureBank may verify an external account through instant verification or small trial deposits. Follow the instructions shown when linking the account."
+  },
+  {
+    "id": 161,
+    "category": "Money Transfers",
+    "question": "I sent a transfer to the wrong account. What should I do?",
+    "answer": "Contact SecureBank immediately. A scheduled transfer may be cancelable before processing, but completed transfers may be difficult or impossible to recover."
+  },
+  {
+    "id": 162,
+    "category": "Money Transfers",
+    "question": "Why has the recipient not received my transfer?",
+    "answer": "Check that the transfer is completed and the recipient details are correct. Weekends, holidays, verification reviews, and receiving-bank processing can cause delays."
+  },
+  {
+    "id": 163,
+    "category": "Money Transfers",
+    "question": "What is my transfer limit?",
+    "answer": "Transfer limits vary by account, destination, and transfer type. Review the limit shown in online banking before confirming the transfer."
+  },
+  {
+    "id": 164,
+    "category": "Money Transfers",
+    "question": "Can I transfer money from another bank into SecureBank?",
+    "answer": "Yes. Link and verify an eligible external account, then initiate an incoming ACH transfer through SecureBank online banking or the mobile app."
+  },
+  {
+    "id": 165,
+    "category": "Money Transfers",
+    "question": "Does SecureBank offer person-to-person payments?",
+    "answer": "Available payment options are shown in the Transfers or Payments section of online banking. Contact support if you do not see a person-to-person payment option."
+  },
+  {
+    "id": 166,
+    "category": "Debit Cards",
+    "question": "My debit card is expiring. When will I receive a new one?",
+    "answer": "SecureBank normally sends a replacement before an eligible card expires. Confirm that your mailing address is current and contact support if the replacement does not arrive."
+  },
+  {
+    "id": 167,
+    "category": "Debit Cards",
+    "question": "What should I do if my debit card is damaged?",
+    "answer": "Request a replacement through card management or customer support. Keep the card secure and destroy it after the replacement is activated."
+  },
+  {
+    "id": 168,
+    "category": "Debit Cards",
+    "question": "Does my SecureBank card support contactless payments?",
+    "answer": "A card with the contactless symbol can be tapped at a compatible terminal. Cards without the symbol can still be inserted or swiped where supported."
+  },
+  {
+    "id": 169,
+    "category": "Digital Wallets",
+    "question": "Can I add my SecureBank card to a digital wallet?",
+    "answer": "Eligible SecureBank cards may be added to supported digital wallets. Open your wallet app, add the card, and complete any requested verification."
+  },
+  {
+    "id": 170,
+    "category": "Debit Cards",
+    "question": "Why did a merchant charge me twice?",
+    "answer": "One charge may be a temporary authorization. If both transactions post, contact the merchant first and then SecureBank if the duplicate charge is not corrected."
+  },
+  {
+    "id": 171,
+    "category": "Pending Transactions",
+    "question": "Why is the final restaurant charge different from the pending amount?",
+    "answer": "Restaurants may authorize an initial amount and later post the final total including the tip. Contact the merchant if the posted total is incorrect."
+  },
+  {
+    "id": 172,
+    "category": "Pending Transactions",
+    "question": "Why did a hotel or gas station place a large hold on my card?",
+    "answer": "Hotels, rental companies, and fuel stations may place temporary authorization holds above the expected purchase amount. The merchant controls when the hold is released."
+  },
+  {
+    "id": 173,
+    "category": "Debit Cards",
+    "question": "Can I withdraw cash internationally?",
+    "answer": "Yes, at compatible ATMs where the card network is accepted. ATM-owner fees, SecureBank fees, exchange rates, withdrawal limits, and fraud monitoring may apply."
+  },
+  {
+    "id": 174,
+    "category": "Debit Cards",
+    "question": "Do I need to notify SecureBank before traveling?",
+    "answer": "Review the travel and card-control options in the SecureBank Mobile app and make sure your contact information is current. Fraud monitoring may still apply while traveling."
+  },
+  {
+    "id": 175,
+    "category": "Card Controls",
+    "question": "Can I turn online or international card purchases on and off?",
+    "answer": "Available card controls are shown in the SecureBank Mobile app. Eligible cards may support temporary locks and controls for certain transaction types."
+  },
+  {
+    "id": 176,
+    "category": "Credit Cards",
+    "question": "What is a credit card statement closing date?",
+    "answer": "The closing date is the end of a billing cycle. Transactions posted by that date appear on the statement, along with the statement balance and payment due date."
+  },
+  {
+    "id": 177,
+    "category": "Credit Cards",
+    "question": "Can I change my credit card payment due date?",
+    "answer": "A due-date change may be available for eligible accounts. Check account settings or contact customer support to request it."
+  },
+  {
+    "id": 178,
+    "category": "Credit Cards",
+    "question": "What is the minimum credit card payment?",
+    "answer": "The minimum payment is the least amount due for that billing cycle. The exact amount and due date appear on your statement and in online banking."
+  },
+  {
+    "id": 179,
+    "category": "Credit Cards",
+    "question": "Where can I find my credit card APR or interest rate?",
+    "answer": "Your applicable APRs are listed in the card agreement, monthly statement, and eligible account details in online banking."
+  },
+  {
+    "id": 180,
+    "category": "Credit Cards",
+    "question": "Can I take a cash advance from my credit card?",
+    "answer": "Cash advances may be available on eligible cards and can have separate limits, fees, and interest terms. Review your card agreement before proceeding."
+  },
+  {
+    "id": 181,
+    "category": "Credit Cards",
+    "question": "How do I request a higher credit limit?",
+    "answer": "Eligible customers may request a credit-limit review through online banking or customer support. Approval is not guaranteed and may require updated financial information."
+  },
+  {
+    "id": 182,
+    "category": "Credit Cards",
+    "question": "Can I add an authorized user to my credit card?",
+    "answer": "Eligible primary cardholders may request an authorized user through online banking or customer support. The primary cardholder remains responsible for the account."
+  },
+  {
+    "id": 183,
+    "category": "Credit Cards",
+    "question": "Does my credit card earn rewards?",
+    "answer": "Rewards depend on the specific card product. Review your card benefits or contact customer support to confirm earning rates, exclusions, and redemption options."
+  },
+  {
+    "id": 184,
+    "category": "Credit Cards",
+    "question": "Why did my credit card refund reduce my balance but not my payment due?",
+    "answer": "A merchant credit may reduce the balance without replacing a required payment. Review the current minimum payment in online banking or contact support."
+  },
+  {
+    "id": 185,
+    "category": "Payment Card Disputes",
+    "question": "How soon should I report an unauthorized credit card transaction?",
+    "answer": "Report an unauthorized transaction as soon as possible. Lock the affected card and contact SecureBank using official contact information."
+  },
+  {
+    "id": 186,
+    "category": "Atm Services",
+    "question": "The ATM kept my card. What should I do?",
+    "answer": "Lock the card immediately in the SecureBank Mobile app and call the lost or stolen card hotline at 1-800-555-0199. Do not rely on the ATM owner returning it."
+  },
+  {
+    "id": 187,
+    "category": "Atm Services",
+    "question": "Can I increase my ATM withdrawal limit?",
+    "answer": "A temporary or permanent limit review may be available for eligible accounts. Contact customer support; approval is not guaranteed."
+  },
+  {
+    "id": 188,
+    "category": "Atm Services",
+    "question": "When is an ATM check deposit available?",
+    "answer": "Availability depends on the check, account history, deposit time, and any hold. Review the receipt or deposit details for the expected availability date."
+  },
+  {
+    "id": 189,
+    "category": "Checks",
+    "question": "Can I cash a check at a SecureBank branch?",
+    "answer": "Eligible customers may cash supported checks at a branch with valid identification, subject to account balance, verification, and applicable limits."
+  },
+  {
+    "id": 190,
+    "category": "Checks",
+    "question": "Why is a check I wrote still pending or not cashed?",
+    "answer": "The payee may not have deposited the check yet, or the receiving institution may still be processing it. Keep enough money available until it posts."
+  },
+  {
+    "id": 191,
+    "category": "Checks",
+    "question": "Can I cancel a check after writing it?",
+    "answer": "You may request a stop payment before the check is paid. The standard stop-payment fee is $30, and a stop payment is not guaranteed if processing has already occurred."
+  },
+  {
+    "id": 192,
+    "category": "Cashier'S Checks",
+    "question": "What should I do if a cashier's check is lost?",
+    "answer": "Contact SecureBank immediately. A declaration of loss, waiting period, identification, and other documentation may be required before replacement can be considered."
+  },
+  {
+    "id": 193,
+    "category": "Bill Pay",
+    "question": "My bill-pay recipient did not receive the payment. What should I do?",
+    "answer": "Check the payment status and delivery date in online banking, confirm the payee details, and contact customer support if the payment is marked delivered but remains missing."
+  },
+  {
+    "id": 194,
+    "category": "Bill Pay",
+    "question": "I scheduled a bill payment for the wrong amount. Can I change it?",
+    "answer": "If processing has not started, cancel or edit the scheduled payment. Once processing begins, contact the payee and SecureBank for available options."
+  },
+  {
+    "id": 195,
+    "category": "Automatic Payments",
+    "question": "How do I stop an automatic payment from my bank account?",
+    "answer": "First cancel with the company. You may also contact SecureBank about a stop-payment request before the next payment processes; fees and documentation may apply."
+  },
+  {
+    "id": 196,
+    "category": "Automatic Payments",
+    "question": "Will replacing my card cancel subscriptions?",
+    "answer": "Not always. Some merchants may receive updated card information through the payment network. Cancel unwanted subscriptions directly with each merchant."
+  },
+  {
+    "id": 197,
+    "category": "Overdrafts And Insufficient Funds",
+    "question": "Can a pending transaction cause an overdraft?",
+    "answer": "Yes. Pending authorizations can reduce available funds, and the final posted amount may contribute to a negative balance depending on other transactions."
+  },
+  {
+    "id": 198,
+    "category": "Overdrafts And Insufficient Funds",
+    "question": "How does linked-account overdraft protection work?",
+    "answer": "Eligible transactions may be covered by transferring available funds from a linked SecureBank account. Transfers remain subject to available funds and account terms."
+  },
+  {
+    "id": 199,
+    "category": "Fees",
+    "question": "Can SecureBank refund a fee?",
+    "answer": "You may ask customer support to review a fee. Refunds are not guaranteed and depend on the account history, fee type, and circumstances."
+  },
+  {
+    "id": 200,
+    "category": "Fees",
+    "question": "Why was I charged a monthly account fee?",
+    "answer": "A monthly fee may apply when the account does not meet its waiver requirements. Review the statement and applicable balance or direct-deposit requirements."
+  },
+  {
+    "id": 201,
+    "category": "Security And Fraud",
+    "question": "I received a suspicious text message from SecureBank. What should I do?",
+    "answer": "Do not click links, reply, or share information. Contact SecureBank using the official number 1-800-555-0188 and delete the message after reporting it."
+  },
+  {
+    "id": 202,
+    "category": "Security And Fraud",
+    "question": "My computer or phone may have malware. How do I protect my bank account?",
+    "answer": "Stop banking on the affected device, use a trusted device to change your password, review transactions, and contact SecureBank if account information may be exposed."
+  },
+  {
+    "id": 203,
+    "category": "Security And Fraud",
+    "question": "Someone gained access to my online banking. What should I do?",
+    "answer": "Contact SecureBank immediately, change your password from a trusted device, review contact information and transactions, and never share verification codes."
+  },
+  {
+    "id": 204,
+    "category": "Security And Fraud",
+    "question": "My phone number was transferred without permission. What should I do?",
+    "answer": "Contact your mobile carrier and SecureBank immediately. Change online banking credentials from a trusted device and review your account for unauthorized activity."
+  },
+  {
+    "id": 205,
+    "category": "Security And Fraud",
+    "question": "I think an ATM or card reader copied my card. What should I do?",
+    "answer": "Lock the card, call the 24/7 card hotline at 1-800-555-0199, and review recent transactions for unauthorized activity."
+  },
+  {
+    "id": 206,
+    "category": "Security And Fraud",
+    "question": "Can SecureBank freeze my credit report?",
+    "answer": "No. Credit freezes are managed by the credit reporting agencies. SecureBank can help secure your bank accounts but cannot place a credit-report freeze for you."
+  },
+  {
+    "id": 207,
+    "category": "Payment Card Disputes",
+    "question": "Will I receive temporary credit during a dispute?",
+    "answer": "Temporary or provisional credit depends on the transaction and review requirements. SecureBank will explain any applicable credit and deadlines after a dispute is opened."
+  },
+  {
+    "id": 208,
+    "category": "Payment Card Disputes",
+    "question": "How can I check the status of a dispute?",
+    "answer": "Check secure messages or dispute details in online banking when available, or contact customer support with the dispute reference number."
+  },
+  {
+    "id": 209,
+    "category": "Payment Card Disputes",
+    "question": "Do I need to contact the merchant before disputing a purchase?",
+    "answer": "For a billing or service problem, contact the merchant first when safe and reasonable. Report clearly unauthorized transactions to SecureBank immediately."
+  },
+  {
+    "id": 210,
+    "category": "Personal Loans",
+    "question": "How do I make a personal loan payment?",
+    "answer": "Use online banking, the mobile app, AutoPay, or another payment method shown in your loan account details."
+  },
+  {
+    "id": 211,
+    "category": "Personal Loans",
+    "question": "Where can I find my personal loan payment due date?",
+    "answer": "The payment due date appears in your loan agreement, monthly statement, and eligible loan details in online banking."
+  },
+  {
+    "id": 212,
+    "category": "Personal Loans",
+    "question": "What happens if my personal loan payment is late?",
+    "answer": "A late payment may lead to fees, collection activity, or credit-reporting consequences according to the loan agreement. Contact support promptly if you cannot pay on time."
+  },
+  {
+    "id": 213,
+    "category": "Personal Loans",
+    "question": "Can I set up automatic payments for my personal loan?",
+    "answer": "Yes. Eligible loan customers can set up AutoPay using an eligible payment account through online banking."
+  },
+  {
+    "id": 214,
+    "category": "Personal Loans",
+    "question": "Can I refinance my SecureBank personal loan?",
+    "answer": "Refinancing is subject to current product availability, a new application, eligibility, and approval. Contact support for available options."
+  },
+  {
+    "id": 215,
+    "category": "Personal Loans",
+    "question": "Where can I download my loan documents?",
+    "answer": "Eligible documents may be available in the loan or Statements section of online banking. Contact support if a required document is not displayed."
+  },
+  {
+    "id": 216,
+    "category": "Personal Loans",
+    "question": "How do I get a personal loan payoff amount?",
+    "answer": "Request a current payoff quote through online banking or customer support. The payoff amount may differ from the displayed principal balance."
+  },
+  {
+    "id": 217,
+    "category": "Personal Loans",
+    "question": "Can I apply for a personal loan with a co-signer?",
+    "answer": "Co-signer availability depends on the current loan product. Review the application options or contact support before applying."
+  },
+  {
+    "id": 218,
+    "category": "Personal Loans",
+    "question": "Why was my personal loan application denied?",
+    "answer": "Approval depends on identity, credit, income, debt, and other underwriting criteria. Review any notice you received for the stated reasons and available contact information."
+  },
+  {
+    "id": 219,
+    "category": "Statements And Documents",
+    "question": "How can I get an old bank statement that is not online?",
+    "answer": "Contact customer support or visit a branch to request an archived statement. A research or copy fee may apply if disclosed before the request."
+  },
+  {
+    "id": 220,
+    "category": "Statements And Documents",
+    "question": "How do I switch between paper and electronic statements?",
+    "answer": "Open statement-delivery settings in online banking, choose the eligible accounts, and update the paperless preference."
+  },
+  {
+    "id": 221,
+    "category": "Tax Documents",
+    "question": "Where can I find my SecureBank tax forms?",
+    "answer": "Eligible tax forms are normally available in the Tax Documents or Statements section of online banking and may also be mailed according to your delivery settings."
+  },
+  {
+    "id": 222,
+    "category": "Tax Documents",
+    "question": "Why did I receive an interest tax form?",
+    "answer": "SecureBank may issue a tax form when reportable interest or other reportable activity meets applicable requirements. Consult a qualified tax professional for personal tax advice."
+  },
+  {
+    "id": 223,
+    "category": "Statements And Documents",
+    "question": "How can I get proof that I own my account?",
+    "answer": "A recent statement or an account-verification letter may provide proof of ownership. Contact support if a specific institution requires a bank letter."
+  },
+  {
+    "id": 224,
+    "category": "Statements And Documents",
+    "question": "Can SecureBank provide a routing and account verification letter?",
+    "answer": "Contact customer support or visit a branch to request available account-verification documentation after identity verification."
+  },
+  {
+    "id": 225,
+    "category": "Branch Services",
+    "question": "Can I withdraw a large amount of cash at a branch?",
+    "answer": "Large cash withdrawals may require advance notice, identification, sufficient available funds, and additional security verification. Contact the branch before visiting."
+  },
+  {
+    "id": 226,
+    "category": "Branch Services",
+    "question": "Does SecureBank exchange or count coins?",
+    "answer": "Coin services vary by branch. Contact the branch before visiting to confirm availability, eligibility, limits, and any applicable fee."
+  },
+  {
+    "id": 227,
+    "category": "Branch Services",
+    "question": "Does SecureBank provide notary services?",
+    "answer": "Notary availability varies by branch and document type. Contact the branch in advance and bring valid identification; SecureBank cannot guarantee every document can be notarized."
+  },
+  {
+    "id": 228,
+    "category": "Accessibility",
+    "question": "What accessibility assistance does SecureBank offer?",
+    "answer": "Contact customer support or a branch to request reasonable assistance for accessing SecureBank services. Available options depend on the channel and customer need."
+  },
+  {
+    "id": 229,
+    "category": "Customer Support",
+    "question": "Can I get customer support in another language?",
+    "answer": "Language assistance may be available. Call customer support at 1-800-555-0188 and request available language support."
+  },
+  {
+    "id": 230,
+    "category": "Account Ownership",
+    "question": "How does SecureBank handle a power of attorney?",
+    "answer": "SecureBank must review the power-of-attorney document and identification before granting account access. Visit a branch or contact support for submission instructions."
+  },
+  {
+    "id": 231,
+    "category": "Customer Support",
+    "question": "How do I send SecureBank a secure message?",
+    "answer": "Sign in to online banking and open the Support, Messages, or Contact section. Do not send passwords, PINs, or one-time verification codes."
+  },
+  {
+    "id": 232,
+    "category": "Customer Support",
+    "question": "How do I make a complaint about SecureBank service?",
+    "answer": "Contact customer support at 1-800-555-0188 or use secure messaging. Clearly describe the issue, dates, and requested review, and keep any reference number provided."
+  },
+  {
+    "id": 233,
+    "category": "Customer Support",
+    "question": "Can SecureBank call me back?",
+    "answer": "Callback availability depends on the support channel. Never provide a password, PIN, or verification code to an unexpected caller claiming to be SecureBank."
+  },
+  {
+    "id": 234,
+    "category": "Products And Services",
+    "question": "Does SecureBank offer business bank accounts?",
+    "answer": "Business banking is not included in this fictional SecureBank knowledge base. Contact customer support to ask about current product availability."
+  },
+  {
+    "id": 235,
+    "category": "Products And Services",
+    "question": "Does SecureBank offer mortgages or home loans?",
+    "answer": "Mortgage products are not included in this fictional SecureBank knowledge base. Contact support to ask about current product availability."
+  },
+  {
+    "id": 236,
+    "category": "Products And Services",
+    "question": "Does SecureBank offer auto loans?",
+    "answer": "Auto loans are not included in this fictional SecureBank knowledge base. Contact support to ask about current product availability."
+  },
+  {
+    "id": 237,
+    "category": "Products And Services",
+    "question": "Does SecureBank offer investment accounts?",
+    "answer": "Investment accounts are not included in this fictional SecureBank knowledge base. SecureBank's documented services are focused on retail banking and personal loans."
+  },
+  {
+    "id": 238,
+    "category": "Products And Services",
+    "question": "Can I buy cryptocurrency through SecureBank?",
+    "answer": "Cryptocurrency services are not included in this fictional SecureBank knowledge base. Never send cryptocurrency to someone claiming it is required to secure your bank account."
+  },
+  {
+    "id": 239,
+    "category": "Products And Services",
+    "question": "Does SecureBank sell insurance?",
+    "answer": "Insurance products are not included in this fictional SecureBank knowledge base. Contact support to ask about current product availability."
+  },
+  {
+    "id": 240,
+    "category": "Wire Transfers",
+    "question": "What information is needed for an international wire transfer?",
+    "answer": "You may need the recipient's name and address, account number or IBAN, receiving bank name and address, SWIFT or BIC code, amount, currency, and payment purpose."
   }
 ]
