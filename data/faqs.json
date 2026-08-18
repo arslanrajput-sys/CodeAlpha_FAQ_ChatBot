@@ -1438,5 +1438,185 @@
     "category": "Wire Transfers",
     "question": "What information is needed for an international wire transfer?",
     "answer": "You may need the recipient's name and address, account number or IBAN, receiving bank name and address, SWIFT or BIC code, amount, currency, and payment purpose."
+  },
+  {
+    "id": 241,
+    "category": "Contact And Location",
+    "question": "What is SecureBank's main branch address?",
+    "answer": "SecureBank's fictional main branch is located at 100 SecureBank Plaza, Riverton, NY 10001."
+  },
+  {
+    "id": 242,
+    "category": "Contact And Location",
+    "question": "What is SecureBank's mailing address?",
+    "answer": "SecureBank's fictional general mailing address is P.O. Box 5550, Riverton, NY 10002. Do not mail cash, passwords, PINs, or complete card numbers."
+  },
+  {
+    "id": 243,
+    "category": "Contact And Location",
+    "question": "Where is SecureBank headquartered?",
+    "answer": "SecureBank's fictional headquarters is at 100 SecureBank Plaza, Riverton, NY 10001."
+  },
+  {
+    "id": 244,
+    "category": "Branch Hours",
+    "question": "What are SecureBank's branch hours?",
+    "answer": "The fictional main branch is open Monday through Friday from 9:00 AM to 5:00 PM Eastern Time and Saturday from 9:00 AM to 1:00 PM. It is closed on Sunday."
+  },
+  {
+    "id": 245,
+    "category": "Branch Hours",
+    "question": "Is SecureBank open on Saturday?",
+    "answer": "Yes. The fictional main branch is open Saturday from 9:00 AM to 1:00 PM Eastern Time. Customer support is available Saturday from 9:00 AM to 5:00 PM."
+  },
+  {
+    "id": 246,
+    "category": "Branch Hours",
+    "question": "Is SecureBank open on Sunday?",
+    "answer": "No. The fictional main branch and regular customer support are closed on Sunday. The lost or stolen card hotline remains available 24/7 at 1-800-555-0199."
+  },
+  {
+    "id": 247,
+    "category": "Branch Hours",
+    "question": "What are the drive-through banking hours?",
+    "answer": "The fictional main-branch drive-through is open Monday through Friday from 8:30 AM to 6:00 PM Eastern Time and Saturday from 9:00 AM to 1:00 PM. It is closed Sunday."
+  },
+  {
+    "id": 248,
+    "category": "Atm Services",
+    "question": "Are SecureBank ATMs available 24 hours?",
+    "answer": "Outdoor SecureBank ATMs are generally available 24/7 where site access permits. ATMs inside branches or other buildings are available only during that location's access hours."
+  },
+  {
+    "id": 249,
+    "category": "Branch Hours",
+    "question": "Is SecureBank open on bank holidays?",
+    "answer": "Branches are closed on major U.S. bank holidays. Online banking, the mobile app, and eligible ATMs remain available, but transactions may not process until the next business day."
+  },
+  {
+    "id": 250,
+    "category": "Contact And Location",
+    "question": "How do I find the nearest SecureBank branch or ATM?",
+    "answer": "Use the Branch and ATM Locator on www.securebank.example or in SecureBank Mobile. The locator shows fictional addresses, hours, accessibility details, and available services."
+  },
+  {
+    "id": 251,
+    "category": "Branch Services",
+    "question": "How do I schedule a branch appointment?",
+    "answer": "Use the appointment option in SecureBank Mobile or on www.securebank.example, or call customer support at 1-800-555-0188."
+  },
+  {
+    "id": 252,
+    "category": "Branch Services",
+    "question": "Can I visit a SecureBank branch without an appointment?",
+    "answer": "Yes. Most routine services accept walk-ins during branch hours, although an appointment may reduce waiting time or be required for specialized assistance."
+  },
+  {
+    "id": 253,
+    "category": "Contact And Location",
+    "question": "What is the main SecureBank branch phone number?",
+    "answer": "The fictional main branch phone number is 1-212-555-0100. General customer support is available at 1-800-555-0188."
+  },
+  {
+    "id": 254,
+    "category": "Customer Support",
+    "question": "How do I call SecureBank from outside the United States?",
+    "answer": "For fictional international customer support, call +1-212-555-0188. Your phone provider may charge international calling fees."
+  },
+  {
+    "id": 255,
+    "category": "Security And Fraud",
+    "question": "How do I report a lost or stolen card while outside the United States?",
+    "answer": "Lock the card in SecureBank Mobile and call the fictional international card hotline at +1-212-555-0199. The U.S. hotline is 1-800-555-0199."
+  },
+  {
+    "id": 256,
+    "category": "Security And Fraud",
+    "question": "What number should I call to report fraud?",
+    "answer": "Call SecureBank customer support at 1-800-555-0188. For a lost or stolen card, call the 24/7 hotline at 1-800-555-0199."
+  },
+  {
+    "id": 257,
+    "category": "Customer Support",
+    "question": "Does SecureBank offer live chat support?",
+    "answer": "Yes. Fictional live chat is available through online banking and SecureBank Mobile Monday through Friday from 8:00 AM to 8:00 PM Eastern Time and Saturday from 9:00 AM to 5:00 PM."
+  },
+  {
+    "id": 258,
+    "category": "Customer Support",
+    "question": "How long does SecureBank take to answer an email?",
+    "answer": "SecureBank normally replies to support@securebank.example within one to two business days. Use phone support for urgent security, fraud, or lost-card issues."
+  },
+  {
+    "id": 259,
+    "category": "Customer Support",
+    "question": "How can I check the status of a customer support case?",
+    "answer": "Check secure messages or contact customer support at 1-800-555-0188 and provide the case reference number. Never send passwords, PINs, or verification codes."
+  },
+  {
+    "id": 260,
+    "category": "Contact And Location",
+    "question": "Can I mail a deposit to SecureBank?",
+    "answer": "Mail deposits are not documented as a standard service in this fictional knowledge base. Use a branch, eligible ATM, direct deposit, or Mobile Check Deposit instead."
+  },
+  {
+    "id": 261,
+    "category": "Bank Identification",
+    "question": "What is SecureBank's routing number?",
+    "answer": "SecureBank's fictional routing number is 021000999. Confirm the number shown in your own online banking before using it for a payment or transfer."
+  },
+  {
+    "id": 262,
+    "category": "Bank Identification",
+    "question": "What is SecureBank's SWIFT or BIC code?",
+    "answer": "SecureBank's fictional SWIFT/BIC code is SECBUS33. Confirm all international wire instructions with customer support before sending funds."
+  },
+  {
+    "id": 263,
+    "category": "Bank Identification",
+    "question": "Does SecureBank use IBAN numbers?",
+    "answer": "SecureBank is a fictional U.S. bank and does not issue IBANs. International senders may need the recipient account number, routing details, and fictional SWIFT/BIC code SECBUS33."
+  },
+  {
+    "id": 264,
+    "category": "Bank Identification",
+    "question": "What is SecureBank's bank code?",
+    "answer": "For U.S. domestic transfers, use the fictional routing number 021000999. For eligible international wires, the fictional SWIFT/BIC code is SECBUS33."
+  },
+  {
+    "id": 265,
+    "category": "Branch Services",
+    "question": "Which services are available at the main branch?",
+    "answer": "The fictional main branch offers account opening, teller deposits and withdrawals, cashier's checks, account maintenance, identity verification, appointments, and general support."
+  },
+  {
+    "id": 266,
+    "category": "Branch Services",
+    "question": "Does SecureBank offer safe deposit boxes?",
+    "answer": "Safe deposit box availability varies and is not guaranteed. Contact the fictional main branch at 1-212-555-0100 to ask about sizes, eligibility, and availability."
+  },
+  {
+    "id": 267,
+    "category": "Branch Services",
+    "question": "Can I exchange foreign currency at SecureBank?",
+    "answer": "Foreign currency service may require advance ordering and is not available at every fictional branch. Contact the main branch before visiting."
+  },
+  {
+    "id": 268,
+    "category": "Contact And Location",
+    "question": "Is parking available at the main branch?",
+    "answer": "Yes. The fictional main branch at 100 SecureBank Plaza provides customer parking during branch hours."
+  },
+  {
+    "id": 269,
+    "category": "Accessibility",
+    "question": "Is the main SecureBank branch wheelchair accessible?",
+    "answer": "Yes. The fictional main branch provides an accessible entrance, accessible service area, and customer parking. Contact the branch for additional assistance."
+  },
+  {
+    "id": 270,
+    "category": "Branch Hours",
+    "question": "Which time zone does SecureBank use for its posted hours?",
+    "answer": "Unless otherwise stated, the fictional main branch and customer support hours are listed in Eastern Time."
   }
 ]
