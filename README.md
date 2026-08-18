@@ -29,7 +29,7 @@ The matching engine uses both word TF-IDF and a small character TF-IDF component
 
 ## Optional grounded AI answers (Gemini)
 
-For more natural answers to paraphrased questions, the chatbot can use the Gemini API with `gemini-2.5-flash-lite`. It first retrieves the closest FAQ records. SecureBank questions are answered from that context; general questions are answered by the model without unrelated FAQ context.
+For more natural answers to paraphrased questions, the chatbot can use the Gemini API with `gemini-3.5-flash-lite`. It first retrieves the closest FAQ records. SecureBank questions are answered from that context; general questions are answered by the model without unrelated FAQ context.
 
 1. Create a Gemini API key at https://aistudio.google.com/app/apikey.
 2. In Vercel, open **Project Settings → Environment Variables**.
