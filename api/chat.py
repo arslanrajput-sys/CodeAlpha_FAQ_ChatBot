@@ -17,8 +17,37 @@ from lib.chatbot import FAQMatcher
 matcher = FAQMatcher(ROOT / "data" / "faqs.json")
 
 
+def _groq_models() -> tuple[str, ...]:
+    """Return configured and fallback models without duplicates."""
+    configured_model = os.environ.get("GROQ_MODEL", "").strip()
+    return tuple(dict.fromkeys(filter(None, (
+        configured_model,
+        "groq/compound-mini",
+        "qwen/qwen3.6-27b",
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+    ))))
+
+
+def _groq_http_error(exc: HTTPError, model: str) -> str:
+    """Extract Groq's safe error code/message so permission failures are actionable."""
+    detail = ""
+    try:
+        body = exc.read().decode("utf-8", errors="replace")
+        payload = json.loads(body)
+        error = payload.get("error", {})
+        message = str(error.get("message", "")).strip()
+        code = str(error.get("code", "")).strip()
+        detail = " ".join(part for part in (code, message) if part)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, AttributeError):
+        detail = ""
+
+    suffix = f": {detail[:500]}" if detail else ""
+    return f"{model} returned HTTP {exc.code}{suffix}"
+
+
 def answer_with_groq(question: str, candidates: list[dict]) -> tuple[str | None, str | None]:
-    """Use GPT-OSS for general answers, grounded by FAQ context when available."""
+    """Use Groq for general answers, grounded by FAQ context when available."""
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
         return None, "GROQ_API_KEY is not configured."
@@ -49,9 +78,9 @@ def answer_with_groq(question: str, candidates: list[dict]) -> tuple[str | None,
             },
         ],
     }
-    last_error = "Unknown Groq API error."
-    # The second model keeps the app working if the larger model is unavailable.
-    for model in ("openai/gpt-oss-120b", "openai/gpt-oss-20b"):
+    errors = []
+    # Try multiple current Groq models so one restricted model does not disable chat.
+    for model in _groq_models():
         payload["model"] = model
         request = Request(
             "https://api.groq.com/openai/v1/chat/completions",
@@ -63,16 +92,17 @@ def answer_with_groq(question: str, candidates: list[dict]) -> tuple[str | None,
             method="POST",
         )
         try:
-            with urlopen(request, timeout=8) as response:
+            with urlopen(request, timeout=10) as response:
                 result = json.loads(response.read().decode("utf-8"))
             return result["choices"][0]["message"]["content"].strip(), None
         except HTTPError as exc:
-            last_error = f"Groq returned HTTP {exc.code} for {model}."
+            errors.append(_groq_http_error(exc, model))
         except (URLError, KeyError, IndexError, TimeoutError, json.JSONDecodeError) as exc:
-            last_error = f"Groq request failed for {model}: {exc}."
+            errors.append(f"{model} request failed: {exc}")
 
-    print(last_error)
-    return None, last_error
+    error_summary = "Groq models failed | " + " | ".join(errors)
+    print(error_summary)
+    return None, error_summary
 
 
 class handler(BaseHTTPRequestHandler):
@@ -112,8 +142,9 @@ class handler(BaseHTTPRequestHandler):
             return self._send_json({
                 "ok": True,
                 "service": "SecureBank FAQ Chatbot",
-                "method": "FAQ retrieval + optional GPT-OSS answers",
+                "method": "FAQ retrieval + Groq answers",
                 "ai_enabled": bool(os.environ.get("GROQ_API_KEY")),
+                "configured_model": os.environ.get("GROQ_MODEL") or "automatic",
             })
 
         return self._send_json({"error": "Not found."}, 404)
