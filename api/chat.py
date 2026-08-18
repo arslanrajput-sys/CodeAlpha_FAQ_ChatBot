@@ -1,7 +1,10 @@
 import json
+import os
 import sys
 from http.server import BaseHTTPRequestHandler
 from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -12,6 +15,57 @@ from lib.chatbot import FAQMatcher
 
 
 matcher = FAQMatcher(ROOT / "data" / "faqs.json")
+
+
+def answer_with_groq(question: str, candidates: list[dict]) -> str | None:
+    """Use GPT-OSS to explain only the relevant FAQ records in natural language."""
+    api_key = os.environ.get("GROQ_API_KEY")
+    if not api_key or not candidates:
+        return None
+
+    context = "\n\n".join(
+        f"FAQ {index + 1}\nQuestion: {faq['question']}\nAnswer: {faq['answer']}"
+        for index, faq in enumerate(candidates)
+    )
+    payload = {
+        "model": "openai/gpt-oss-120b",
+        "temperature": 0.15,
+        "max_tokens": 350,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "You are SecureBank customer support. Answer the customer's "
+                    "question using only the FAQ context provided. Do not invent "
+                    "bank policies, fees, limits, timelines, or procedures. If the "
+                    "context does not answer the question, say that you cannot confirm "
+                    "it and advise the customer to contact SecureBank support. Be clear, "
+                    "helpful, and concise."
+                ),
+            },
+            {
+                "role": "user",
+                "content": f"Customer question: {question}\n\nFAQ context:\n{context}",
+            },
+        ],
+    }
+    request = Request(
+        "https://api.groq.com/openai/v1/chat/completions",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+
+    try:
+        with urlopen(request, timeout=8) as response:
+            result = json.loads(response.read().decode("utf-8"))
+        return result["choices"][0]["message"]["content"].strip()
+    except (HTTPError, URLError, KeyError, IndexError, TimeoutError, json.JSONDecodeError) as exc:
+        print(f"Groq API error: {exc}")
+        return None
 
 
 class handler(BaseHTTPRequestHandler):
@@ -78,7 +132,23 @@ class handler(BaseHTTPRequestHandler):
                     400,
                 )
 
-            result = matcher.match(question)
+            candidates = matcher.top_matches(question, limit=5)
+            ai_answer = answer_with_groq(question, candidates)
+
+            if ai_answer:
+                best_faq = candidates[0]
+                result = {
+                    "answer": ai_answer,
+                    "matched": True,
+                    "confidence": best_faq["score"],
+                    "matched_question": best_faq["question"],
+                    "category": best_faq.get("category"),
+                    "source": "grounded-ai",
+                }
+            else:
+                # Keep the project fully usable if the API key is absent or rate-limited.
+                result = matcher.match(question)
+                result["source"] = "faq-matching"
             return self._send_json(result)
 
         except json.JSONDecodeError:
