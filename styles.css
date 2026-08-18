@@ -1,10 +1,10 @@
 :root {
   --green: #145c4e;
   --green-dark: #0f483d;
-  --green-soft: #eef6f3;
-  --text: #18201e;
-  --muted: #66706d;
-  --border: #e1e6e4;
+  --green-soft: #f1f6f4;
+  --text: #17201d;
+  --muted: #68726f;
+  --border: #dfe5e2;
   --surface: #f7f9f8;
   --white: #ffffff;
 }
@@ -23,9 +23,11 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--white);
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 15px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 button,
@@ -54,7 +56,7 @@ button {
   color: var(--text);
   text-decoration: none;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .brand-mark {
@@ -64,7 +66,7 @@ button {
   align-items: flex-end;
   gap: 3px;
   padding: 6px;
-  border-radius: 4px;
+  border-radius: 5px;
   background: var(--green);
 }
 
@@ -84,10 +86,8 @@ button {
   align-items: center;
   gap: 8px;
   color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
+  font-size: 0.74rem;
+  font-weight: 600;
 }
 
 .header-status span {
@@ -114,27 +114,25 @@ button {
 .section-label {
   margin: 0 0 10px;
   color: var(--muted);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
+  font-size: 0.72rem;
+  font-weight: 600;
 }
 
 .intro h1 {
   max-width: 420px;
   margin: 0;
   color: var(--text);
-  font-size: clamp(2rem, 3vw, 2.45rem);
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.035em;
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .intro-copy {
   max-width: 390px;
   margin: 18px 0 0;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.75;
 }
 
@@ -159,15 +157,15 @@ button {
 }
 
 .topic-card strong {
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .topic-card p {
   grid-column: 2;
   margin: 4px 0 0;
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   line-height: 1.55;
 }
 
@@ -177,9 +175,7 @@ button {
   align-items: flex-start;
   margin-top: 28px;
   padding: 12px 0 12px 14px;
-  border: 0;
   border-left: 2px solid #b4853f;
-  border-radius: 0;
   background: var(--white);
 }
 
@@ -198,20 +194,20 @@ button {
 
 .urgent-note strong {
   display: block;
-  font-size: 0.76rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .urgent-note p {
   margin: 3px 0 0;
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   line-height: 1.5;
 }
 
 .urgent-note b {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .chat-panel {
@@ -221,9 +217,8 @@ button {
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 6px;
   background: var(--white);
-  box-shadow: none;
 }
 
 .panel-header {
@@ -238,15 +233,14 @@ button {
 
 .panel-header .section-label {
   margin-bottom: 4px;
-  font-size: 0.61rem;
+  font-size: 0.64rem;
 }
 
 .panel-header h2 {
   margin: 0;
   color: var(--text);
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .clear-button {
@@ -254,8 +248,8 @@ button {
   border: 0;
   color: var(--muted);
   background: transparent;
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: 0.72rem;
+  font-weight: 600;
 }
 
 .clear-button:hover {
@@ -287,11 +281,11 @@ button {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  border-radius: 4px;
+  border-radius: 5px;
   color: var(--white);
   background: var(--green);
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .message-content {
@@ -306,10 +300,10 @@ button {
 
 .message-bubble {
   padding: 12px 14px;
-  border-radius: 4px;
+  border-radius: 5px;
   color: #2e3936;
   background: var(--surface);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   line-height: 1.65;
 }
 
@@ -323,7 +317,7 @@ button {
   display: block;
   margin-top: 6px;
   color: #8a9491;
-  font-size: 0.61rem;
+  font-size: 0.62rem;
   line-height: 1.5;
 }
 
@@ -339,8 +333,8 @@ button {
   display: block;
   margin-bottom: 9px;
   color: var(--muted);
-  font-size: 0.66rem;
-  font-weight: 500;
+  font-size: 0.68rem;
+  font-weight: 600;
 }
 
 .quick-list {
@@ -352,10 +346,10 @@ button {
 .quick-list button {
   padding: 7px 10px;
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 4px;
   color: #46514e;
   background: var(--white);
-  font-size: 0.67rem;
+  font-size: 0.69rem;
   transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
 }
 
@@ -400,13 +394,12 @@ button {
   gap: 10px;
   padding: 6px 6px 6px 13px;
   border: 1px solid #cbd3d0;
-  border-radius: 3px;
+  border-radius: 5px;
   background: var(--white);
 }
 
 .composer:focus-within {
   border-color: var(--green);
-  box-shadow: none;
 }
 
 .composer textarea {
@@ -419,7 +412,7 @@ button {
   outline: 0;
   color: var(--text);
   background: transparent;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   line-height: 1.5;
 }
 
@@ -435,11 +428,11 @@ button {
   justify-content: center;
   gap: 7px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 4px;
   color: var(--white);
   background: var(--green);
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
 .composer button:hover:not(:disabled) {
@@ -454,7 +447,7 @@ button {
 .disclaimer {
   margin: 9px 0 0;
   color: #89928f;
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   line-height: 1.5;
 }
 
@@ -530,7 +523,7 @@ button {
   }
 
   .header-status {
-    font-size: 0.62rem;
+    font-size: 0.64rem;
   }
 
   .topic-grid {
@@ -544,7 +537,6 @@ button {
   .chat-panel {
     height: 620px;
     margin-top: 26px;
-    border-radius: 3px;
   }
 
   .panel-header,
