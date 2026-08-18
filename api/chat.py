@@ -191,7 +191,7 @@ class handler(BaseHTTPRequestHandler):
 
             all_candidates = matcher.top_matches(question, limit=5)
             # Weak lexical matches are not useful context for a general question.
-            has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.14)
+            has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.25)
             candidates = all_candidates if has_relevant_faq else []
             ai_answer, ai_error = answer_with_gemini(question, candidates)
 
