@@ -22,8 +22,8 @@ def _gemini_models() -> tuple[str, ...]:
     configured_model = os.environ.get("GEMINI_MODEL", "").strip()
     return tuple(dict.fromkeys(filter(None, (
         configured_model,
-        "gemini-2.5-flash-lite",
-        "gemini-2.5-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.6-flash",
     ))))
 
 
