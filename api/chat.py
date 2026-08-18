@@ -18,15 +18,15 @@ matcher = FAQMatcher(ROOT / "data" / "faqs.json")
 
 
 def answer_with_groq(question: str, candidates: list[dict]) -> str | None:
-    """Use GPT-OSS to explain only the relevant FAQ records in natural language."""
+    """Use GPT-OSS for general answers, grounded by FAQ context when available."""
     api_key = os.environ.get("GROQ_API_KEY")
-    if not api_key or not candidates:
+    if not api_key:
         return None
 
     context = "\n\n".join(
         f"FAQ {index + 1}\nQuestion: {faq['question']}\nAnswer: {faq['answer']}"
         for index, faq in enumerate(candidates)
-    )
+    ) or "No relevant SecureBank FAQ was provided."
     payload = {
         "model": "openai/gpt-oss-120b",
         "temperature": 0.15,
@@ -35,12 +35,13 @@ def answer_with_groq(question: str, candidates: list[dict]) -> str | None:
             {
                 "role": "system",
                 "content": (
-                    "You are SecureBank customer support. Answer the customer's "
-                    "question using only the FAQ context provided. Do not invent "
-                    "bank policies, fees, limits, timelines, or procedures. If the "
-                    "context does not answer the question, say that you cannot confirm "
-                    "it and advise the customer to contact SecureBank support. Be clear, "
-                    "helpful, and concise."
+                    "You are a helpful general assistant on the SecureBank website. "
+                    "For a question about SecureBank, use the FAQ context as the source "
+                    "of truth and do not invent bank policies, fees, limits, timelines, "
+                    "or procedures. If a specific SecureBank detail is not in the context, "
+                    "say you cannot confirm it and advise contacting SecureBank support. "
+                    "For general, non-SecureBank questions, answer normally and concisely. "
+                    "Do not provide personalized financial, legal, or medical advice."
                 ),
             },
             {
@@ -105,7 +106,8 @@ class handler(BaseHTTPRequestHandler):
             return self._send_json({
                 "ok": True,
                 "service": "SecureBank FAQ Chatbot",
-                "method": "NLTK preprocessing + TF-IDF + cosine similarity",
+                "method": "FAQ retrieval + optional GPT-OSS answers",
+                "ai_enabled": bool(os.environ.get("GROQ_API_KEY")),
             })
 
         return self._send_json({"error": "Not found."}, 404)
@@ -132,18 +134,20 @@ class handler(BaseHTTPRequestHandler):
                     400,
                 )
 
-            candidates = matcher.top_matches(question, limit=5)
+            all_candidates = matcher.top_matches(question, limit=5)
+            # Weak lexical matches are not useful context for a general question.
+            has_relevant_faq = bool(all_candidates and all_candidates[0]["score"] >= 0.14)
+            candidates = all_candidates if has_relevant_faq else []
             ai_answer = answer_with_groq(question, candidates)
 
             if ai_answer:
-                best_faq = candidates[0]
                 result = {
                     "answer": ai_answer,
-                    "matched": True,
-                    "confidence": best_faq["score"],
-                    "matched_question": best_faq["question"],
-                    "category": best_faq.get("category"),
-                    "source": "grounded-ai",
+                    "matched": has_relevant_faq,
+                    "confidence": all_candidates[0]["score"] if has_relevant_faq else 0.0,
+                    "matched_question": all_candidates[0]["question"] if has_relevant_faq else None,
+                    "category": all_candidates[0].get("category") if has_relevant_faq else None,
+                    "source": "grounded-knowledge" if has_relevant_faq else "general-ai",
                 }
             else:
                 # Keep the project fully usable if the API key is absent or rate-limited.
