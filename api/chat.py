@@ -25,6 +25,8 @@ BANKING_TERMS = {
     "autopay", "direct deposit", "mobile banking", "online banking",
     "verification code", "beneficiary", "payee", "withdrawal",
     "mortgage", "crypto", "insurance", "cashier", "payroll", "tax form",
+    "address", "hours", "location", "contact", "phone", "email", "holiday",
+    "swift", "iban", "headquarters", "mailing", "drive through", "appointment",
 }
 BANKING_PHRASES = {term for term in BANKING_TERMS if " " in term}
 BANKING_STEMS = {
