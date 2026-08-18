@@ -41,7 +41,7 @@ function addBotMessage(answer, data = {}) {
   row.className = "message-row bot";
 
   let matchInfo = "";
-  if (data.matched && data.matched_question) {
+  if (data.source === "grounded-knowledge" && data.matched_question) {
     matchInfo = `
       <span class="match-note">
         Related help topic: ${escapeHTML(data.matched_question)}
