@@ -64,7 +64,7 @@ button {
   align-items: flex-end;
   gap: 3px;
   padding: 6px;
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--green);
 }
 
@@ -86,8 +86,8 @@ button {
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .header-status span {
@@ -104,7 +104,7 @@ button {
   gap: clamp(48px, 7vw, 88px);
   align-items: start;
   margin: 0 auto;
-  padding: 52px 0 64px;
+  padding: 46px 0 58px;
 }
 
 .intro {
@@ -113,18 +113,18 @@ button {
 
 .section-label {
   margin: 0 0 10px;
-  color: var(--green);
-  font-size: 0.69rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .intro h1 {
   max-width: 420px;
   margin: 0;
   color: var(--text);
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-size: clamp(2rem, 3vw, 2.45rem);
   font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.035em;
@@ -176,10 +176,11 @@ button {
   gap: 11px;
   align-items: flex-start;
   margin-top: 28px;
-  padding: 14px;
-  border: 1px solid #eadfca;
-  border-radius: 6px;
-  background: #fffaf1;
+  padding: 12px 0 12px 14px;
+  border: 0;
+  border-left: 2px solid #b4853f;
+  border-radius: 0;
+  background: var(--white);
 }
 
 .urgent-icon {
@@ -220,9 +221,9 @@ button {
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 3px;
   background: var(--white);
-  box-shadow: 0 10px 28px rgba(24, 32, 30, 0.06);
+  box-shadow: none;
 }
 
 .panel-header {
@@ -286,7 +287,7 @@ button {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  border-radius: 50%;
+  border-radius: 4px;
   color: var(--white);
   background: var(--green);
   font-size: 0.7rem;
@@ -305,7 +306,7 @@ button {
 
 .message-bubble {
   padding: 12px 14px;
-  border-radius: 10px;
+  border-radius: 4px;
   color: #2e3936;
   background: var(--surface);
   font-size: 0.82rem;
@@ -351,7 +352,7 @@ button {
 .quick-list button {
   padding: 7px 10px;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 3px;
   color: #46514e;
   background: var(--white);
   font-size: 0.67rem;
@@ -399,13 +400,13 @@ button {
   gap: 10px;
   padding: 6px 6px 6px 13px;
   border: 1px solid #cbd3d0;
-  border-radius: 7px;
+  border-radius: 3px;
   background: var(--white);
 }
 
 .composer:focus-within {
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(20, 92, 78, 0.08);
+  box-shadow: none;
 }
 
 .composer textarea {
@@ -434,7 +435,7 @@ button {
   justify-content: center;
   gap: 7px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 2px;
   color: var(--white);
   background: var(--green);
   font-size: 0.7rem;
@@ -543,7 +544,7 @@ button {
   .chat-panel {
     height: 620px;
     margin-top: 26px;
-    border-radius: 8px;
+    border-radius: 3px;
   }
 
   .panel-header,
