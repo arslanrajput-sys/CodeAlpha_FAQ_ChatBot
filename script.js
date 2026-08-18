@@ -42,10 +42,9 @@ function addBotMessage(answer, data = {}) {
 
   let matchInfo = "";
   if (data.matched && data.matched_question) {
-    const percent = Math.round((data.confidence || 0) * 100);
     matchInfo = `
       <span class="match-note">
-        Matched FAQ: ${escapeHTML(data.matched_question)} · Similarity ${percent}%
+        Related help topic: ${escapeHTML(data.matched_question)}
       </span>
     `;
   }
@@ -55,7 +54,7 @@ function addBotMessage(answer, data = {}) {
     <div class="message-content">
       <div class="message-bubble">${escapeHTML(answer)}</div>
       ${matchInfo}
-      <span class="message-meta">SecureBank Assistant</span>
+      <span class="message-meta">SecureBank support</span>
     </div>
   `;
 
@@ -153,9 +152,9 @@ clearChat.addEventListener("click", () => {
       <div class="avatar">SB</div>
       <div class="message-content">
         <div class="message-bubble">
-          Chat cleared. What can I help you with?
+          Welcome back. What can we help you with?
         </div>
-        <span class="message-meta">SecureBank Assistant</span>
+        <span class="message-meta">SecureBank support</span>
       </div>
     </div>
   `;
