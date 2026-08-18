@@ -194,3 +194,5 @@ This is a fictional educational bank. The chatbot:
 | Chatbot response | Python `/api/chat` endpoint |
 | Chat UI | HTML + CSS + JavaScript |
 | Deployment | GitHub + Vercel |
+
+<!-- Deployment refresh: environment configuration applied. -->
