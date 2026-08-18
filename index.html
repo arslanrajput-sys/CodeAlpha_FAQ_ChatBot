@@ -7,68 +7,68 @@
   <title>Help Centre | SecureBank</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="SecureBank Help Centre">
-      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span>SecureBank</span>
-    </a>
-    <div class="header-status"><span></span> Help Centre</div>
-  </header>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="SecureBank Help Centre">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>SecureBank</span>
+      </a>
+      <span class="header-label">Help Centre</span>
+    </header>
 
-  <main class="support-page">
-    <section class="intro" aria-labelledby="page-title">
-      <p class="section-label">Customer support</p>
-      <h1 id="page-title">How can we help?</h1>
-      <p class="intro-copy">Ask a question about your account, cards, transfers, online banking or branch services.</p>
+    <main class="support-page">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="section-label">Customer support</p>
+        <h1 id="page-title">How can we help?</h1>
+        <p class="intro-copy">Ask about your account, cards, transfers, online banking, branch services and other common banking questions.</p>
+      </section>
 
-      <div class="topic-grid" aria-label="Popular support topics">
-        <div class="topic-card"><span class="topic-number">01</span><strong>Cards &amp; security</strong><p>Lost cards, card controls and suspicious activity.</p></div>
-        <div class="topic-card"><span class="topic-number">02</span><strong>Digital banking</strong><p>Sign-in help, passwords and mobile banking.</p></div>
-        <div class="topic-card"><span class="topic-number">03</span><strong>Payments &amp; transfers</strong><p>Transfer timing, limits, payments and deposits.</p></div>
-      </div>
+      <section class="chat-panel" aria-label="SecureBank support chat">
+        <header class="panel-header">
+          <div>
+            <h2>SecureBank support</h2>
+            <p>Ask a question and we’ll help you find the answer.</p>
+          </div>
+          <button id="clearChat" class="clear-button" type="button">Start over</button>
+        </header>
 
-      <aside class="urgent-note">
-        <div class="urgent-icon" aria-hidden="true">!</div>
-        <div><strong>Lost or stolen card?</strong><p>Call <b>1-800-555-0199</b> right away.</p></div>
-      </aside>
-    </section>
+        <div id="chatMessages" class="messages" aria-live="polite">
+          <div class="message-row bot">
+            <div class="avatar" aria-hidden="true">S</div>
+            <div class="message-content">
+              <div class="message-bubble">Welcome. What can we help you with today?</div>
+              <span class="message-meta">SecureBank support</span>
+            </div>
+          </div>
 
-    <section class="chat-panel" aria-label="SecureBank support search">
-      <header class="panel-header">
-        <div><p class="section-label">Ask a question</p><h2>SecureBank support</h2></div>
-        <button id="clearChat" class="clear-button" type="button">Start over</button>
-      </header>
-
-      <div id="chatMessages" class="messages" aria-live="polite">
-        <div class="message-row bot">
-          <div class="avatar" aria-hidden="true">S</div>
-          <div class="message-content"><div class="message-bubble">Welcome. What can we help you with today?</div><span class="message-meta">SecureBank support</span></div>
-        </div>
-
-        <div class="quick-section" id="quickQuestions">
-          <span>Popular questions</span>
-          <div class="quick-list">
-            <button type="button" data-question="I forgot my online banking password. What should I do?">Reset my password</button>
-            <button type="button" data-question="What should I do if my debit card is lost or stolen?">My card is missing</button>
-            <button type="button" data-question="What is the daily ATM withdrawal limit?">ATM withdrawal limit</button>
-            <button type="button" data-question="How long does an external bank transfer take?">Transfer timing</button>
+          <div class="quick-section" id="quickQuestions">
+            <span>Popular questions</span>
+            <div class="quick-list">
+              <button type="button" data-question="I forgot my online banking password. What should I do?">Reset my password</button>
+              <button type="button" data-question="What should I do if my debit card is lost or stolen?">Lost or stolen card</button>
+              <button type="button" data-question="What is the daily ATM withdrawal limit?">ATM withdrawal limit</button>
+              <button type="button" data-question="How long does an external bank transfer take?">Transfer timing</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="composer-wrap">
-        <form id="chatForm" class="composer">
-          <textarea id="questionInput" rows="1" maxlength="700" placeholder="Type your question here" aria-label="Ask a SecureBank support question"></textarea>
-          <button id="sendButton" type="submit" aria-label="Send question"><span>Send</span><span aria-hidden="true">→</span></button>
-        </form>
-        <p class="disclaimer">Never share passwords, PINs, full card numbers or verification codes.</p>
-      </div>
-    </section>
-  </main>
+        <div class="composer-wrap">
+          <form id="chatForm" class="composer">
+            <textarea id="questionInput" rows="1" maxlength="700" placeholder="Type your question" aria-label="Ask a SecureBank support question"></textarea>
+            <button id="sendButton" type="submit" aria-label="Send question">Send</button>
+          </form>
+          <p class="disclaimer">Never share passwords, PINs, full card numbers or verification codes.</p>
+        </div>
+      </section>
+
+      <p class="urgent-line"><strong>Lost or stolen card?</strong> Call 1-800-555-0199 right away.</p>
+    </main>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
