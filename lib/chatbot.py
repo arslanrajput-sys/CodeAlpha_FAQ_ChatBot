@@ -105,17 +105,11 @@ class FAQMatcher:
 
         return " ".join(normalized)
 
-    def match(self, question: str) -> Dict:
+    def top_matches(self, question: str, limit: int = 5) -> List[Dict]:
+        """Return the most relevant FAQs, including their blended TF-IDF scores."""
         question = (question or "").strip()
-
         if not question:
-            return {
-                "answer": "Please enter a question.",
-                "matched": False,
-                "confidence": 0.0,
-                "matched_question": None,
-                "category": None,
-            }
+            return []
 
         word_query = self.word_vectorizer.transform([question])
         char_query = self.char_vectorizer.transform([question])
@@ -127,9 +121,29 @@ class FAQMatcher:
         # support for short or slightly misspelled questions.
         scores = (word_scores * 0.82) + (char_scores * 0.18)
 
-        best_index = int(np.argmax(scores))
-        best_score = float(scores[best_index])
-        best_faq = self.faqs[best_index]
+        ranked_indexes = np.argsort(scores)[::-1][:max(1, limit)]
+        return [
+            {
+                **self.faqs[int(index)],
+                "score": round(float(scores[int(index)]), 3),
+            }
+            for index in ranked_indexes
+        ]
+
+    def match(self, question: str) -> Dict:
+        question = (question or "").strip()
+        if not question:
+            return {
+                "answer": "Please enter a question.",
+                "matched": False,
+                "confidence": 0.0,
+                "matched_question": None,
+                "category": None,
+            }
+
+        candidates = self.top_matches(question, limit=1)
+        best_faq = candidates[0]
+        best_score = best_faq["score"]
 
         if best_score < self.threshold:
             return {
