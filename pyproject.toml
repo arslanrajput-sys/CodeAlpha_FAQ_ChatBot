@@ -1,2 +1,13 @@
+[project]
+name = "securebank-faq-chatbot"
+version = "1.0.0"
+description = "FAQ chatbot using NLTK, TF-IDF, and cosine similarity."
+requires-python = ">=3.12"
+dependencies = [
+  "nltk",
+  "numpy",
+  "scikit-learn",
+]
+
 [tool.vercel]
 entrypoint = "api.chat:handler"
